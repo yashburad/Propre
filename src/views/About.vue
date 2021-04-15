@@ -13,6 +13,7 @@
           <!-- <textarea rows="10" v-model="text"></textarea> -->
           <!-- <br />
           <text-reader @load="text = $event"></text-reader> -->
+          <h2>{{ text }}</h2>
           <VueFileAgent
             :multiple="true"
             :maxFiles="20"
@@ -41,7 +42,6 @@
 <script>
 import Header from "@/components/Header.vue";
 import Slides from "@/components/Slides.vue";
-// import TextReader from "@/components/TextReader.vue";
 
 // import VueFileAgent from 'vue-file-agent';
 
@@ -67,7 +67,6 @@ export default {
   },
   methods: {
     hash: function (x) {
-      // this.text = x.file;
       var SHA256 = require("crypto-js/sha256");
       const reader = new FileReader();
       reader.readAsText(x.file, "UTF-8");

@@ -11,11 +11,13 @@
           class="animate__fadeIn"
           style="display: grid; animation-duration: 7s"
         >
-          <img
-            :class="imgIsLoaded ? 'show' : ''"
-            @load="imgLoadedMethod"
-            src="../assets/logo2.png"
-          />
+          <div>
+            <img
+              :class="imgIsLoaded ? 'show' : ''"
+              @load="imgLoadedMethod"
+              src="../assets/logo2.png"
+            />
+          </div>
           <router-link to="/about">
             <b-button size="lg">Create Your Proof</b-button>
           </router-link>
