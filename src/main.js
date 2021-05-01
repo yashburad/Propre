@@ -9,6 +9,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueFileAgent from 'vue-file-agent';
 import 'vue-file-agent/dist/vue-file-agent.css';
 
+import VueClipboard from 'vue-clipboard2'
+Vue.use(VueClipboard)
+
+
 Vue.use(BootstrapVue)
 Vue.use(VueFileAgent)
 Vue.use(IconsPlugin)

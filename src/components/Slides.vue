@@ -1,23 +1,39 @@
 <template>
   <div class="slide">
     <Slide>
-      <a id="home" href="#">
+      <router-link to="/">
         <span>HOME</span>
-      </a>
-      <a id="home" href="#">
+      </router-link>
+
+      <router-link to="/proof">
+        <span>CREATE YOUR PROOF</span>
+      </router-link>
+      <router-link to="/verify">
         <span>VERIFY</span>
+      </router-link>
+      <a id="home" href="#">
+        <span>ABOUT US</span>
       </a>
+      <!-- <a id="home" href="#">
+        <span>VERIFY</span>
+      </a> -->
     </Slide>
   </div>
 </template>
 
 <style>
 .bm-burger-button {
-  margin-top: 22% !important;
+  margin-top: 45vh !important;
 }
 
 .bm-burger-bars {
   background-color: #9e9e9e;
+}
+
+.bm-menu {
+  /* width: 300px; */
+  /* display: grid; */
+  /* align-content: center; */
 }
 
 .line-style {
@@ -26,6 +42,10 @@
 
 .bm-item-list > * > span {
   margin-left: 0px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 5px;
+  font-size: unset;
 }
 
 .bm-item-list > * {

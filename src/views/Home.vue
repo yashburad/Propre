@@ -15,10 +15,10 @@
             <img
               :class="imgIsLoaded ? 'show' : ''"
               @load="imgLoadedMethod"
-              src="../assets/logo2.png"
+              src="../assets/logo4-min.png"
             />
           </div>
-          <router-link to="/about">
+          <router-link to="/create">
             <b-button size="lg">Create Your Proof</b-button>
           </router-link>
         </div>

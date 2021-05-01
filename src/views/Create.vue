@@ -7,13 +7,9 @@
       }"
     >
       <div class="overlay1">
-        <Header />
+        <Header heading="CREATE YOUR PROOF" />
 
         <div class="create">
-          <!-- <textarea rows="10" v-model="text"></textarea> -->
-          <!-- <br />
-          <text-reader @load="text = $event"></text-reader> -->
-          <h2>{{ text }}</h2>
           <VueFileAgent
             :multiple="true"
             :maxFiles="20"
@@ -23,13 +19,17 @@
             :uploadUrl="uploadUrl"
             v-model="fileRecords"
             @select="filesSelected($event)"
-            @delete="fileDeleted($event)"
             @beforedelete="onBeforeDelete($event)"
           ></VueFileAgent>
           <div style="padding-top: 40px">
-            <b-button size="lg" @click="computehash()"
-              >Create Your Proof</b-button
-            >
+            <router-link to="/proof">
+              <b-button size="lg">Create Your Proof</b-button>
+            </router-link>
+            <!-- <b-button size="lg" @click="computehash()">
+              <router-link style="color: white" to="/proof">
+                Create Your Proof
+              </router-link></b-button
+            > -->
           </div>
         </div>
       </div>
@@ -49,11 +49,10 @@ export default {
   name: "Home",
   data() {
     return {
-      // fileRecords: [],
-      dict1: new Object(),
-      dict: new Object(),
+      dict: {},
       text: "",
       file: "",
+      text1: "",
       fileRecords: [],
       uploadHeaders: { "X-Test-Header": "vue-file-agent" },
       fileRecordsForUpload: [],
@@ -62,8 +61,6 @@ export default {
   components: {
     Slides,
     Header,
-    // TextReader,
-    // VueFileAgent
   },
   methods: {
     hash: function (x) {
@@ -76,13 +73,15 @@ export default {
       };
     },
     computehash: function () {
-      for (var member in this.dict) delete this.dict[member];
+      if (this.text1 === "A") {
+        this.text1 = "B";
+      } else {
+        this.text1 = "A";
+      }
       var i;
-      for (i = 0; i < this.fileRecordsForUpload.length; i++) {
-        // this.text = i;
-        this.file = this.fileRecordsForUpload[i];
+      for (i = 0; i < this.fileRecords.length; i++) {
+        this.file = this.fileRecords[i];
         this.hash(this.file);
-        // this.hash(i);
       }
     },
     filesSelected: function (fileRecordsNewlySelected) {
@@ -93,24 +92,17 @@ export default {
         validFileRecords
       );
     },
-    fileDeleted: function (fileRecord) {
-      var i = this.fileRecordsForUpload.indexOf(fileRecord);
-      if (i !== -1) {
-        this.fileRecordsForUpload.splice(i, 1);
-      } else {
-        this.deleteUploadedFile(fileRecord);
-      }
-    },
     onBeforeDelete: function (fileRecord) {
       var i = this.fileRecordsForUpload.indexOf(fileRecord);
+      var name = this.fileRecordsForUpload[i].file.name;
+      delete this.dict[name];
       if (i !== -1) {
-        // queued file, not yet uploaded. Just remove from the arrays
         this.fileRecordsForUpload.splice(i, 1);
         var k = this.fileRecords.indexOf(fileRecord);
         if (k !== -1) this.fileRecords.splice(k, 1);
       } else {
         if (confirm("Are you sure you want to delete?")) {
-          this.$refs.vueFileAgent.deleteFileRecord(fileRecord); // will trigger 'delete' event
+          this.$refs.vueFileAgent.deleteFileRecord(fileRecord);
         }
       }
     },
