@@ -46,7 +46,7 @@
       </div>
     </div>
     <!-- <Clipboard /> -->
-    <Header heading="PROOF" />
+    <Header heading="ABOUT US" />
 
     <Slides />
   </div>
