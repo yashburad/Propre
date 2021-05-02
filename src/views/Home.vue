@@ -3,7 +3,7 @@
     <div
       class="background"
       :style="{
-        backgroundImage: 'url(' + require('../assets/images.jpg') + ')',
+        backgroundImage: 'url(' + require('../assets/bg1.jpg') + ')',
       }"
     >
       <div v-show="imgIsLoaded" class="overlay">
