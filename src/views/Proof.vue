@@ -11,14 +11,30 @@
           <h2>Thank you for using Propre.com!</h2>
           <h3 style="margin-top: 20px">Proof Details</h3>
 
-          <div style="text-align: -webkit-center">
-            <h5 style="width: 80%; overflow-wrap: break-word; margin: 20px 0px">
+          <div style="display: flex; justify-content: center; margin: 20px 0px">
+            <h5 style="margin-right: 10px">
               Transaction Number :
-              2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee
+              {{ this.transaction }}
             </h5>
+            <svg
+              @click="doCopy"
+              v-bind:title="message"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-clipboard"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"
+              />
+              <path
+                d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
+              />
+            </svg>
           </div>
           <div class="path" v-for="keys in dict" :key="keys.fileName">
-            <!-- <div style="padding: 20px 0px; display: contents"> -->
             <Clipboard :dict="keys" />
           </div>
         </div>
@@ -42,6 +58,8 @@ export default {
   data() {
     return {
       message: "Copy to the clipboard",
+      transaction:
+        "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
       dict: [
         {
           fileName: "file_name",
@@ -87,7 +105,20 @@ export default {
     Header,
     Clipboard,
   },
-  methods: {},
+  methods: {
+    doCopy: function () {
+      this.$copyText(this.transaction).then(
+        function (e) {
+          alert("Copied");
+          console.log(e);
+        },
+        function (e) {
+          alert("Can not copy");
+          console.log(e);
+        }
+      );
+    },
+  },
 };
 </script>
 
