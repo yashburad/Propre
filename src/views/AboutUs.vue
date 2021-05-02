@@ -23,10 +23,6 @@
             </b-row>
           </b-container>
           <h1>Founders</h1>
-          <!-- <div class="about-data">
-            <img src="../assets/yash.jpg" />
-            <img src="../assets/yash.jpg" />
-          </div> -->
           <b-container style="margin-top: 50px">
             <b-row
               class="animate__animated animate__fadeInUp"
@@ -37,7 +33,7 @@
                 <h2>Yash Burad</h2>
               </b-col>
               <b-col class="images">
-                <img src="../assets/yash.jpg" />
+                <img src="../assets/yvj.jpg" />
                 <h2>Yashvardhan Jain</h2>
               </b-col>
             </b-row>
