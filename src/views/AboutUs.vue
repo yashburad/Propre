@@ -8,7 +8,21 @@
     >
       <div class="overlay1">
         <div class="aboutus">
-          <h1>About Us</h1>
+          <h1>About the Project</h1>
+          <b-container style="padding: 20px 0px">
+            <b-row>
+              <p>
+                Proof of existence (Link) like application with the added
+                functionality of adding more data per transaction (with the help
+                of a Merkle tree). Proof of existence (Link) like application
+                with the added functionality of adding more data per transaction
+                (with the help of a Merkle tree). Proof of existence (Link) like
+                application with the added functionality of adding more data per
+                transaction (with the help of a Merkle tree).
+              </p>
+            </b-row>
+          </b-container>
+          <h1>Founders</h1>
           <!-- <div class="about-data">
             <img src="../assets/yash.jpg" />
             <img src="../assets/yash.jpg" />
@@ -72,7 +86,7 @@ export default {
 }
 
 .aboutus {
-  padding-top: 20vh;
+  padding-top: 25vh;
   color: white;
 }
 
