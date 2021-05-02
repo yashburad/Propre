@@ -7,7 +7,7 @@
       }"
     >
       <div class="overlay1">
-        <div class="verify">
+        <div class="verify" style="padding-top: 5%">
           <h1>Verification</h1>
           <div style="text-align: -webkit-center">
             <div class="verify-data">

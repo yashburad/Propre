@@ -6,7 +6,7 @@
         backgroundImage: 'url(' + require('../assets/images.jpg') + ')',
       }"
     >
-      <div class="overlay">
+      <div v-show="imgIsLoaded" class="overlay">
         <div
           class="animate__fadeIn"
           style="display: grid; animation-duration: 7s"

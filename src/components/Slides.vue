@@ -11,9 +11,9 @@
       <router-link to="/verify">
         <span>VERIFY</span>
       </router-link>
-      <a id="home" href="#">
+      <router-link to="/aboutus">
         <span>ABOUT US</span>
-      </a>
+      </router-link>
       <!-- <a id="home" href="#">
         <span>VERIFY</span>
       </a> -->
@@ -25,6 +25,15 @@
 .bm-burger-button {
   margin-top: 45vh !important;
   position: fixed;
+}
+
+.slide a:hover {
+  text-decoration: none;
+}
+
+.slide a:hover span {
+  color: #9e9e9e;
+  transition: 1s;
 }
 
 .bm-burger-bars {
