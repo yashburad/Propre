@@ -16,6 +16,8 @@
   text-align: center;
   color: #2c3e50;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
 }
 
 #nav {

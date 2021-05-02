@@ -13,7 +13,11 @@
             :multiple="true"
             :maxFiles="20"
             :deletable="true"
-            class="animate__animated animate__fadeInDown"
+            :class="
+              this.fileRecordsForUpload.length > 0
+                ? 'animate__animated animate__fadeInDown vuefileagent'
+                : 'animate__animated animate__fadeInDown'
+            "
             style="
               animation-duration: 5s;
               width: 70%;
@@ -26,7 +30,7 @@
             @beforedelete="onBeforeDelete($event)"
           ></VueFileAgent>
           <b-form-input
-            placeholder="Enter Email Id (Optional)"
+            placeholder="ENTER EMIAL ID (OPTIONAL)"
             v-model="email"
           ></b-form-input>
           <div style="padding-top: 40px">
@@ -120,15 +124,14 @@ export default {
 </script>
 
 <style scoped>
+.vuefileagent {
+  overflow: scroll !important;
+}
+
 .form-control {
   background: white;
   margin-top: 30px;
   width: 50%;
-}
-
-.grid-block-wrapper {
-  overflow: scroll;
-  max-height: 40vh;
 }
 
 .create {
@@ -189,6 +192,6 @@ export default {
 .theme-undefined {
   width: 70%;
   justify-self: center;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 </style>

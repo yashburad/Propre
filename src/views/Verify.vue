@@ -24,14 +24,14 @@
               ></VueFileAgent>
               <div style="display: flex; margin-top: 50px; align-items: center">
                 <b-form-input
-                  placeholder="Enter Transaction Id"
+                  placeholder="ENTER TRANSACTION ID"
                   v-model="transactionId"
                 ></b-form-input>
               </div>
               <div style="display: flex; margin-top: 50px; align-items: center">
                 <!-- <h3>File Path:</h3> -->
                 <b-form-input
-                  placeholder="Enter File Path"
+                  placeholder="ENTER FILE PATH"
                   v-model="filePath"
                 ></b-form-input>
               </div>

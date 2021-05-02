@@ -105,6 +105,10 @@ export default {
 </script>
 
 <style scoped>
+input {
+  overflow: hidden;
+}
+
 .form-control {
   background: transparent;
   color: white;

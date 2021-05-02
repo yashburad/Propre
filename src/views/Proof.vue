@@ -9,54 +9,38 @@
       <div class="overlay1">
         <div class="proof">
           <h2>Thank you for using Propre.com!</h2>
-          <h3 style="margin: 20px 0px">Proof Details</h3>
-          <b-container
-            ><b-row
-              ><h5 style="margin: 0px 10px; text-transform: uppercase">
-                Transaction Number :
-                {{ this.transaction }}
-              </h5>
-              <svg
-                @click="doCopy"
-                v-bind:title="message"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-clipboard"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"
-                />
-                <path
-                  d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
-                />
-              </svg> </b-row
+          <h3 class="mb-4" style="margin: 20px 0px">Proof Details</h3>
+          <b-container class="mb-3"
+            ><b-row class="d-flex">
+              <b-col sm="3" class="p-0" style="align-self: center">
+                <h5 style="margin: 0px 10px; text-transform: uppercase">
+                  Transaction Number :
+                </h5>
+              </b-col>
+              <b-col sm="8">
+                <b-form-input :value="this.transaction" readonly></b-form-input>
+              </b-col>
+              <b-col style="text-align: left" sm="1">
+                <svg
+                  @click="doCopy"
+                  v-bind:title="message"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-clipboard"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"
+                  />
+                  <path
+                    d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
+                  />
+                </svg>
+              </b-col> </b-row
           ></b-container>
-          <!-- <div style="display: flex; justify-content: center; margin: 20px 0px">
-            <h5 style="margin-right: 10px; text-transform: uppercase">
-              Transaction Number :
-              {{ this.transaction }}
-            </h5>
-            <svg
-              @click="doCopy"
-              v-bind:title="message"
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-clipboard"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"
-              />
-              <path
-                d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
-              />
-            </svg>
-          </div> -->
+
           <div class="path" v-for="keys in dict" :key="keys.fileName">
             <Clipboard :dict="keys" />
           </div>
@@ -144,6 +128,16 @@ export default {
 </script>
 
 <style scoped>
+.form-control {
+  background: transparent;
+  color: white;
+  text-transform: uppercase;
+}
+
+input {
+  overflow: hidden;
+}
+
 .path {
   text-align: left;
   display: flex;
