@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" style="position: absolute; width: 100%; top: 0px">
     <b-navbar variant="black" type="dark">
       <h2 style="color: #9e9e9e; font-weight: 100; margin-bottom: 0px">
         {{ this.heading }}

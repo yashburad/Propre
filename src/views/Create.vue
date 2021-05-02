@@ -7,15 +7,19 @@
       }"
     >
       <div class="overlay1">
-        <Header heading="CREATE YOUR PROOF" />
-
         <div class="create">
           <VueFileAgent
+            :theme="'list'"
             :multiple="true"
             :maxFiles="20"
             :deletable="true"
             class="animate__animated animate__fadeInDown"
-            style="animation-duration: 5s"
+            style="
+              animation-duration: 5s;
+              width: 70%;
+              overflow: scroll;
+              max-height: 40vh;
+            "
             :uploadUrl="uploadUrl"
             v-model="fileRecords"
             @select="filesSelected($event)"
@@ -34,7 +38,7 @@
         </div>
       </div>
     </div>
-
+    <Header heading="CREATE YOUR PROOF" />
     <Slides />
   </div>
 </template>
@@ -110,13 +114,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .create {
-  height: calc(100vh - 157px);
+  /* height: calc(100vh - 157px); */
   overflow: scroll;
   display: grid;
   align-content: center;
-  padding-top: 30px;
+  padding-top: 130px;
+  /* text-align: -webkit-center; */
+  justify-items: center;
 }
 
 .btn-secondary {
@@ -144,10 +150,10 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #00000000;
   /* opacity: 0.5; */
-  display: block;
+  display: grid;
   align-items: center;
   /* animation: mymove 3s;
   animation-fill-mode: forwards; */

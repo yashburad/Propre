@@ -7,7 +7,6 @@
       }"
     >
       <div class="overlay1">
-        <Header heading="PROOF" />
         <div class="proof">
           <h2>Thank you for using Propre.com!</h2>
           <h3 style="margin-top: 20px">Proof Details</h3>
@@ -26,6 +25,7 @@
       </div>
     </div>
     <!-- <Clipboard /> -->
+    <Header heading="PROOF" />
 
     <Slides />
   </div>
@@ -47,6 +47,21 @@ export default {
           fileName: "file_name",
           path:
             " 2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
+        },
+        {
+          fileName: "file_namefile_name",
+          path:
+            "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
+        },
+        {
+          fileName: "file_namefile_namefile_name",
+          path:
+            "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
+        },
+        {
+          fileName: "file_name",
+          path:
+            "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
         },
         {
           fileName: "file_name",
@@ -76,7 +91,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .path {
   width: 80%;
   margin-left: 20vh;
@@ -87,7 +102,7 @@ export default {
 }
 .proof {
   color: white;
-  padding-top: 30px;
+  padding-top: 20vh;
   font-weight: 100;
 }
 

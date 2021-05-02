@@ -5,7 +5,7 @@
         <span>HOME</span>
       </router-link>
 
-      <router-link to="/proof">
+      <router-link to="/create">
         <span>CREATE YOUR PROOF</span>
       </router-link>
       <router-link to="/verify">
@@ -24,6 +24,7 @@
 <style>
 .bm-burger-button {
   margin-top: 45vh !important;
+  position: fixed;
 }
 
 .bm-burger-bars {
