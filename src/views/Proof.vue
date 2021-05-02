@@ -93,8 +93,8 @@ export default {
 
 <style scoped>
 .path {
-  width: 80%;
-  margin-left: 20vh;
+  /* width: 80%; */
+  /* margin-left: 20vh; */
   text-align: left;
   display: flex;
   padding: 25px 0px;
