@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div v-show="imgIsLoaded" id="app">
     <div
       class="background"
       :style="{

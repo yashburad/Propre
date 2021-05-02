@@ -117,7 +117,7 @@ export default {
 <style scoped>
 .create {
   /* height: calc(100vh - 157px); */
-  overflow: scroll;
+  /* overflow: scroll; */
   display: grid;
   align-content: center;
   padding-top: 130px;
@@ -167,6 +167,10 @@ export default {
   to {
     background-color: #000000c4;
   }
+}
+
+.theme-list::-webkit-scrollbar {
+  display: none;
 }
 
 .contain {
