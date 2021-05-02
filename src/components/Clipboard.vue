@@ -5,7 +5,12 @@
         <h5>{{ this.dict.fileName + "'s path" }} :</h5>
       </b-col>
       <b-col class="filepath" md="9">
-        <h5>{{ " " + this.dict.path }}</h5>
+        <b-form-input
+          class="w-100"
+          :value="this.dict.path"
+          readonly
+        ></b-form-input>
+        <!-- <h5>{{ " " + this.dict.path }}</h5> -->
       </b-col>
       <b-col md="1" @click="doCopy" v-bind:title="message"
         ><svg
@@ -100,6 +105,11 @@ export default {
 </script>
 
 <style scoped>
+.form-control {
+  background: transparent;
+  color: white;
+  text-transform: uppercase;
+}
 .clipboard {
   position: relative;
   top: -25px;

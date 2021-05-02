@@ -19,7 +19,7 @@
             />
           </div>
           <router-link to="/create">
-            <b-button size="lg">Create Your Proof</b-button>
+            <b-button size="lg">CREATE YOUR PROOF</b-button>
           </router-link>
         </div>
       </div>
@@ -58,7 +58,7 @@ export default {
   margin-top: 20px; */
   background-color: transparent !important;
   color: #ffffff;
-  border-color: white;
+  /* border-color: white; */
 }
 
 #app {

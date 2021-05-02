@@ -8,7 +8,7 @@
     >
       <div class="overlay1">
         <div class="verify" style="padding-top: 5%">
-          <h1>Verification</h1>
+          <h1>VERIFICATION</h1>
           <div style="text-align: -webkit-center">
             <div class="verify-data">
               <VueFileAgent
@@ -23,14 +23,19 @@
                 @beforedelete="onBeforeDelete($event)"
               ></VueFileAgent>
               <div style="display: flex; margin-top: 50px; align-items: center">
-                <h3>Transaction Id:</h3>
-                <b-form-input v-model="transactionId"></b-form-input>
+                <b-form-input
+                  placeholder="Enter Transaction Id"
+                  v-model="transactionId"
+                ></b-form-input>
               </div>
               <div style="display: flex; margin-top: 50px; align-items: center">
-                <h3>File Path:</h3>
-                <b-form-input v-model="filePath"></b-form-input>
+                <!-- <h3>File Path:</h3> -->
+                <b-form-input
+                  placeholder="Enter File Path"
+                  v-model="filePath"
+                ></b-form-input>
               </div>
-              <b-button size="lg" @click="computehash()"> Verify </b-button>
+              <b-button size="lg" @click="computehash()"> VERIFY </b-button>
             </div>
           </div>
         </div>
@@ -108,7 +113,7 @@ export default {
 <style scoped>
 .form-control {
   border: none;
-  width: 80%;
+  width: 100%;
   background: #9e9e9e;
   margin-left: auto;
 }

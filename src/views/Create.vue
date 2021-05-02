@@ -25,9 +25,13 @@
             @select="filesSelected($event)"
             @beforedelete="onBeforeDelete($event)"
           ></VueFileAgent>
+          <b-form-input
+            placeholder="Enter Email Id (Optional)"
+            v-model="email"
+          ></b-form-input>
           <div style="padding-top: 40px">
             <router-link to="/proof">
-              <b-button size="lg">Create Your Proof</b-button>
+              <b-button size="lg">CREATE YOUR PROOF</b-button>
             </router-link>
             <!-- <b-button size="lg" @click="computehash()">
               <router-link style="color: white" to="/proof">
@@ -53,6 +57,7 @@ export default {
   name: "Home",
   data() {
     return {
+      email: "",
       dict: {},
       text: "",
       file: "",
@@ -115,6 +120,12 @@ export default {
 </script>
 
 <style scoped>
+.form-control {
+  background: #9e9e9e;
+  margin-top: 30px;
+  width: 50%;
+}
+
 .create {
   /* height: calc(100vh - 157px); */
   /* overflow: scroll; */
@@ -128,7 +139,7 @@ export default {
 .btn-secondary {
   background-color: transparent !important;
   color: #ffffff;
-  border-color: white;
+  /* border-color: white; */
   /* margin-top: 20px; */
 }
 
