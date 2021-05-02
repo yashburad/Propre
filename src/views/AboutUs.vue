@@ -3,7 +3,7 @@
     <div
       class="background"
       :style="{
-        backgroundImage: 'url(' + require('../assets/bg1.jpg') + ')',
+        backgroundImage: 'url(' + require('../assets/bg2.jpg') + ')',
       }"
     >
       <div class="overlay1">

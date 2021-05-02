@@ -3,13 +3,13 @@
     <div
       class="background"
       :style="{
-        backgroundImage: 'url(' + require('../assets/bg1.jpg') + ')',
+        backgroundImage: 'url(' + require('../assets/bg2.jpg') + ')',
       }"
     >
       <div class="overlay1">
         <div class="proof">
           <h2>Thank you for using Propre.com!</h2>
-          <h3 style="margin-top: 20px">Proof Details</h3>
+          <h3 style="margin: 20px 0px">Proof Details</h3>
           <b-container
             ><b-row
               ><h5 style="margin: 0px 10px; text-transform: uppercase">
@@ -63,7 +63,6 @@
         </div>
       </div>
     </div>
-    <!-- <Clipboard /> -->
     <Header heading="PROOF" />
 
     <Slides />
@@ -74,7 +73,6 @@
 import Header from "@/components/Header.vue";
 import Slides from "@/components/Slides.vue";
 import Clipboard from "@/components/Clipboard.vue";
-// import VueFileAgent from 'vue-file-agent';
 
 export default {
   name: "Home",
@@ -147,16 +145,14 @@ export default {
 
 <style scoped>
 .path {
-  /* width: 80%; */
-  /* margin-left: 20vh; */
   text-align: left;
   display: flex;
   padding: 25px 0px;
-  /* overflow-wrap: break-word; */
 }
+
 .proof {
   color: white;
-  padding-top: 20vh;
+  padding-top: 25vh;
   font-weight: 100;
 }
 

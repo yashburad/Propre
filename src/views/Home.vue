@@ -3,7 +3,7 @@
     <div
       class="background"
       :style="{
-        backgroundImage: 'url(' + require('../assets/481666.jpg') + ')',
+        backgroundImage: 'url(' + require('../assets/bg2.jpg') + ')',
       }"
     >
       <div v-show="imgIsLoaded" class="overlay">
@@ -52,13 +52,8 @@ export default {
 
 <style scoped>
 .btn-secondary {
-  /* color: #9f9450;
-  border-color: #9f9450;
-  background-color: transparent;
-  margin-top: 20px; */
   background-color: transparent !important;
   color: #ffffff;
-  /* border-color: white; */
 }
 
 #app {
@@ -67,7 +62,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
 
 .background {
@@ -81,17 +75,12 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #00000000;
-  /* opacity: 0.5; */
   display: grid;
   align-items: center;
-  /* animation: mymove 5s;
-  animation-fill-mode: forwards; */
-  /* animation-iteration-count: 1; */
 }
 
 .show {
   opacity: 0;
-  /* transition: 3s; */
 }
 
 .show {

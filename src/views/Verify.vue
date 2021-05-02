@@ -3,7 +3,7 @@
     <div
       class="background"
       :style="{
-        backgroundImage: 'url(' + require('../assets/bg1.jpg') + ')',
+        backgroundImage: 'url(' + require('../assets/bg2.jpg') + ')',
       }"
     >
       <div class="overlay1">
@@ -111,17 +111,30 @@ export default {
 </script>
 
 <style scoped>
+/* ::placeholder {
+  color: white;
+  opacity: 1; 
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+::-ms-input-placeholder {
+  color: white;
+} */
+
 .form-control {
   border: none;
   width: 100%;
-  background: #9e9e9e;
+  background: white;
   margin-left: auto;
 }
 
 .btn-secondary {
   background-color: transparent !important;
   color: #ffffff;
-  border-color: white;
+  /* border-color: white; */
   margin-top: 50px;
 }
 

@@ -3,7 +3,7 @@
     <div
       class="background"
       :style="{
-        backgroundImage: 'url(' + require('../assets/bg1.jpg') + ')',
+        backgroundImage: 'url(' + require('../assets/bg2.jpg') + ')',
       }"
     >
       <div class="overlay1">
@@ -17,8 +17,8 @@
             style="
               animation-duration: 5s;
               width: 70%;
-              overflow: scroll;
               max-height: 40vh;
+              overflow: hidden;
             "
             :uploadUrl="uploadUrl"
             v-model="fileRecords"
@@ -121,26 +121,26 @@ export default {
 
 <style scoped>
 .form-control {
-  background: #9e9e9e;
+  background: white;
   margin-top: 30px;
   width: 50%;
 }
 
+.grid-block-wrapper {
+  overflow: scroll;
+  max-height: 40vh;
+}
+
 .create {
-  /* height: calc(100vh - 157px); */
-  /* overflow: scroll; */
   display: grid;
   align-content: center;
   padding-top: 130px;
-  /* text-align: -webkit-center; */
   justify-items: center;
 }
 
 .btn-secondary {
   background-color: transparent !important;
   color: #ffffff;
-  /* border-color: white; */
-  /* margin-top: 20px; */
 }
 
 #app {
@@ -149,7 +149,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  /* margin-top: 60px; */
 }
 
 .background {
@@ -163,12 +162,8 @@ export default {
   width: 100%;
   height: 100vh;
   background-color: #00000000;
-  /* opacity: 0.5; */
   display: grid;
   align-items: center;
-  /* animation: mymove 3s;
-  animation-fill-mode: forwards; */
-  /* animation-iteration-count: 1; */
 }
 
 @keyframes mymove {
