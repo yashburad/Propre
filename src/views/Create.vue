@@ -30,18 +30,22 @@
             @beforedelete="onBeforeDelete($event)"
           ></VueFileAgent>
           <b-form-input
-            placeholder="ENTER EMIAL ID (OPTIONAL)"
+            placeholder="ENTER EMAIL ID (OPTIONAL)"
             v-model="email"
           ></b-form-input>
           <div style="padding-top: 40px">
             <router-link to="/proof">
               <b-button size="lg">CREATE YOUR PROOF</b-button>
             </router-link>
-            <!-- <b-button size="lg" @click="computehash()">
-              <router-link style="color: white" to="/proof">
-                Create Your Proof
-              </router-link></b-button
-            > -->
+            <b-button
+              size="lg"
+              @click="
+                computehash();
+                create();
+              "
+            >
+              Create Your Proof
+            </b-button>
           </div>
         </div>
       </div>
@@ -75,7 +79,56 @@ export default {
     Slides,
     Header,
   },
+  updated: function () {
+    this.computehash();
+  },
   methods: {
+    create: function () {
+      // const keys = Object.keys(this.dict);
+      // console.log(keys);
+      // let a = "";
+      // for (var i in keys) {
+      //   a += keys[i] + "+";
+      // }
+      // a = a.substring(0, a.length - 1);
+
+      // let b = "";
+      // for (i in this.dict) {
+      //   // console.log(this.dict[i]);
+      //   b += this.dict[i] + "+";
+      // }
+      // b = b.substring(0, b.length - 1);
+      // console.log(b);
+      // console.log(a);
+      // let str = "http://127.0.0.1:5000/propre/api?files=" + a + "&hashes=" + b;
+      // let str1 =
+      //   "http://127.0.0.1:5000/propre/api?files=abcd.c+ghghgg.out&hashes=abcdabcd+abcdabcd";
+      // var requestOptions = {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/json" },
+      //   mode: "no-cors",
+      // };
+      // fetch(str1, requestOptions).then((response) =>
+      //   console.log(response.json)
+      // );
+      var requestOptions = {
+        method: "POST",
+        redirect: "follow",
+        mode: "no-cors",
+      };
+      let a = {};
+      fetch("http://127.0.0.1:5000/", requestOptions).then((response) =>
+        console.log(response.json())
+      );
+      console.log(a);
+      // let body;
+
+      // .then((result) => console.log(result))
+      // .catch((error) => console.log("error", error));
+      // .then((result) => console.log(result))
+      // .catch((error) => console.log(this.dict, error));
+    },
+
     hash: function (x) {
       var SHA256 = require("crypto-js/sha256");
       const reader = new FileReader();

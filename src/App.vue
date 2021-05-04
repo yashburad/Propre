@@ -20,6 +20,10 @@
   font-weight: 500;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 #nav {
   padding: 30px;
 }

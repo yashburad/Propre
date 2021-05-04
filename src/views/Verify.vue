@@ -9,7 +9,7 @@
       <div class="overlay1">
         <div class="verify" style="padding-top: 5%">
           <h1>VERIFICATION</h1>
-          <div style="text-align: -webkit-center">
+          <div style="display: flex; justify-content: center">
             <div class="verify-data">
               <VueFileAgent
                 :theme="'list'"
