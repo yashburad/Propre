@@ -7,7 +7,10 @@
       }"
     >
       <div class="overlay1">
-        <div class="verify" style="padding-top: 5%">
+        <div
+          class="animate__animated animate__fadeInDown verify"
+          style="padding-top: 5%; animation-duration: 4s"
+        >
           <h1>VERIFICATION</h1>
           <div style="display: flex; justify-content: center">
             <div class="verify-data">
@@ -15,8 +18,6 @@
                 :theme="'list'"
                 :maxFiles="1"
                 :deletable="true"
-                class="animate__animated animate__fadeInDown"
-                style="animation-duration: 2s"
                 :uploadUrl="uploadUrl"
                 v-model="fileRecords"
                 @select="filesSelected($event)"
