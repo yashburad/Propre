@@ -71,19 +71,19 @@ export default {
       console.log(keys);
       let a = "";
       for (var i in keys) {
-        a += keys[i] + "+";
+        let x = keys[i].replaceAll(" ", "_");
+        a += x + "+";
       }
       a = a.substring(0, a.length - 1);
       let b = "";
       for (i in this.dict) {
-        // console.log(this.dict[i]);
         b += this.dict[i] + "+";
       }
       b = b.substring(0, b.length - 1);
       console.log(b);
       console.log(a);
       var str =
-        "https://propre-api.herokuapp.com/propre/api?files=" +
+        "https://propre-api.herokuapp.com/propre-api/proof?files=" +
         a +
         "&hashes=" +
         b +
