@@ -69,7 +69,7 @@ export default {
       dict: {},
       text: "",
       file: "",
-      text1: "",
+      text1: {},
       fileRecords: [],
       uploadHeaders: { "X-Test-Header": "vue-file-agent" },
       fileRecordsForUpload: [],
@@ -111,16 +111,42 @@ export default {
       // fetch(str1, requestOptions).then((response) =>
       //   console.log(response.json)
       // );
-      var requestOptions = {
-        method: "POST",
-        redirect: "follow",
-        mode: "no-cors",
-      };
-      let a = {};
-      fetch("http://127.0.0.1:5000/", requestOptions).then((response) =>
-        console.log(response.json())
-      );
-      console.log(a);
+      // var requestOptions = {
+      //   method: "POST",
+      //   redirect: "follow",
+      //   mode: "no-cors",
+      // };
+      // let a = {};
+      // fetch("http://127.0.0.1:5000/", requestOptions).then((response) =>
+      //   console.log(response.json())
+      // );
+      // console.log(a);
+      // var requestOptions = {
+      //   method: "get",
+      //   redirect: "follow",
+      //   mode: "no-cors",
+      //   headers: { "Content-Type": "text/plain" },
+      // };
+
+      // fetch("https://api.npms.io/v2/search?q=vue", requestOptions)
+      //   .then((response) => response.json())
+      //   .then((response) => console.log(response))
+      //   .catch((error) => console.log("error", error));
+
+      // var myHeaders = new Headers();
+      // myHeaders.append("Access-Control-Allow-Origin", "http://localhost:8000");
+
+      // var requestOptions = {
+      //   method: "GET",
+      //   headers: myHeaders,
+      //   redirect: "follow",
+      //   mode: "no-cors",
+      // };
+
+      fetch("https://learnercircle.herokuapp.com")
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.log("error", error));
       // let body;
 
       // .then((result) => console.log(result))
@@ -139,11 +165,6 @@ export default {
       };
     },
     computehash: function () {
-      if (this.text1 === "A") {
-        this.text1 = "B";
-      } else {
-        this.text1 = "A";
-      }
       var i;
       for (i = 0; i < this.fileRecords.length; i++) {
         this.file = this.fileRecords[i];
