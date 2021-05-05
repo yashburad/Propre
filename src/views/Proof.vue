@@ -18,7 +18,10 @@
                 </h5>
               </b-col>
               <b-col sm="8">
-                <b-form-input :value="this.transaction" readonly></b-form-input>
+                <b-form-input
+                  :value="this.dict['Transaction ID']"
+                  readonly
+                ></b-form-input>
               </b-col>
               <b-col style="text-align: left" sm="1">
                 <svg
@@ -41,8 +44,12 @@
               </b-col> </b-row
           ></b-container>
 
-          <div class="path" v-for="keys in dict" :key="keys.fileName">
-            <Clipboard :dict="keys" />
+          <div
+            class="path"
+            v-for="(item, keys) in dict['Files Path']"
+            :key="keys"
+          >
+            <Clipboard :dict="item" :filename="keys" />
           </div>
         </div>
       </div>
@@ -63,45 +70,7 @@ export default {
   data() {
     return {
       message: "Copy to the clipboard",
-      transaction:
-        "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
-      dict: [
-        {
-          fileName: "file_name",
-          path:
-            " 2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
-        },
-        {
-          fileName: "file_namefile_name",
-          path:
-            "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
-        },
-        {
-          fileName: "file_namefile_namefile_name",
-          path:
-            "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
-        },
-        {
-          fileName: "file_name",
-          path:
-            "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
-        },
-        {
-          fileName: "file_name",
-          path:
-            "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
-        },
-        {
-          fileName: "file_name",
-          path:
-            "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
-        },
-        {
-          fileName: "file_name",
-          path:
-            "2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee,2db8334dec8121c455a8f0b17e2f79823d556e0205a9337490fb35a86db4f5ee",
-        },
-      ],
+      dict: this.$route.params.dict,
       y: "a",
     };
   },
@@ -112,7 +81,7 @@ export default {
   },
   methods: {
     doCopy: function () {
-      this.$copyText(this.transaction).then(
+      this.$copyText(this.dict["Transaction ID"]).then(
         function (e) {
           alert("Copied");
           console.log(e);

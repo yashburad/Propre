@@ -7,23 +7,17 @@
       }"
     >
       <div class="overlay1">
-        <div class="create">
+        <div
+          class="create animate__animated animate__fadeInDown"
+          style="animation-duration: 4s"
+        >
           <VueFileAgent
             :theme="'list'"
             :multiple="true"
             :maxFiles="20"
             :deletable="true"
-            :class="
-              this.fileRecordsForUpload.length > 0
-                ? 'animate__animated animate__fadeInDown vuefileagent'
-                : 'animate__animated animate__fadeInDown'
-            "
-            style="
-              animation-duration: 5s;
-              width: 70%;
-              max-height: 40vh;
-              overflow: hidden;
-            "
+            :class="this.fileRecordsForUpload.length > 0 ? 'vuefileagent' : ''"
+            style="width: 70%; max-height: 40vh; overflow: hidden"
             v-model="fileRecords"
             @select="filesSelected($event)"
             @beforedelete="onBeforeDelete($event)"
@@ -33,23 +27,13 @@
             v-model="email"
           ></b-form-input>
           <div style="padding-top: 40px">
-            <router-link to="/proof">
-              <b-button size="lg">CREATE YOUR PROOF</b-button>
-            </router-link>
-            <b-button
-              size="lg"
-              @click="
-                computehash();
-                create();
-              "
-            >
-              Create Your Proof
-            </b-button>
+            <!-- <router-link to="/proof"> -->
+            <b-button @click="create()" size="lg">CREATE YOUR PROOF</b-button>
+            <!-- </router-link> -->
           </div>
         </div>
       </div>
     </div>
-    <h1>{{ this.info }}aa</h1>
     <Header heading="CREATE YOUR PROOF" />
     <Slides />
   </div>
@@ -65,12 +49,10 @@ export default {
   name: "Home",
   data() {
     return {
-      info: null,
       email: "",
       dict: {},
       text: "",
       file: "",
-      text1: {},
       fileRecords: [],
       uploadHeaders: { "X-Test-Header": "vue-file-agent" },
       fileRecordsForUpload: [],
@@ -85,86 +67,34 @@ export default {
   },
   methods: {
     create: function () {
-      // const keys = Object.keys(this.dict);
-      // console.log(keys);
-      // let a = "";
-      // for (var i in keys) {
-      //   a += keys[i] + "+";
-      // }
-      // a = a.substring(0, a.length - 1);
-      // let b = "";
-      // for (i in this.dict) {
-      //   // console.log(this.dict[i]);
-      //   b += this.dict[i] + "+";
-      // }
-      // b = b.substring(0, b.length - 1);
-      // console.log(b);
-      // console.log(a);
-      // let str = "http://127.0.0.1:5000/propre/api?files=" + a + "&hashes=" + b;
-      // let str1 =
-      //   "http://127.0.0.1:5000/propre/api?files=abcd.c+ghghgg.out&hashes=abcdabcd+abcdabcd";
-      // var requestOptions = {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   mode: "no-cors",
-      // };
-      // fetch(str1, requestOptions).then((response) =>
-      //   console.log(response.json)
-      // );
-      // var requestOptions = {
-      //   method: "POST",
-      //   redirect: "follow",
-      //   mode: "no-cors",
-      // };
-      // let a = {};
-      // fetch("http://127.0.0.1:5000/", requestOptions).then((response) =>
-      //   console.log(response.json())
-      // );
-      // console.log(a);
-      // var requestOptions = {
-      //   method: "get",
-      //   redirect: "follow",
-      //   mode: "no-cors",
-      //   headers: { "Content-Type": "text/plain" },
-      // };
-      // fetch("https://api.npms.io/v2/search?q=vue", requestOptions)
-      //   .then((response) => response.json())
-      //   .then((response) => console.log(response))
-      //   .catch((error) => console.log("error", error));
-      // var myHeaders = new Headers();
-      // myHeaders.append("Access-Control-Allow-Origin", "http://localhost:8000");
-      // var requestOptions = {
-      //   method: "GET",
-      //   headers: myHeaders,
-      //   redirect: "follow",
-      //   mode: "no-cors",
-      // };
-      // fetch("https://learnercircle.herokuapp.com")
-      //   .then((response) => response.text())
-      //   .then((result) => console.log(result))
-      //   .catch((error) => console.log("error", error));var myHeaders = new Headers();
-      // var myHeaders = new Headers();
-      // myHeaders.append("Access-Control-Allow-Origin", "*");
-      // var axios = require("axios");
-      // axios
-      //   .get("http://127.0.0.1:5000/")
-      //   .then((response) => (this.info = response));
-      // var requestOptions = {
-      //   method: "get",
-      //   mode: "no-cors",
-      // };
-      fetch(
-        "https://propre-api.herokuapp.com/propre/api?files=aa.out&hashes=aa"
-      )
+      const keys = Object.keys(this.dict);
+      console.log(keys);
+      let a = "";
+      for (var i in keys) {
+        a += keys[i] + "+";
+      }
+      a = a.substring(0, a.length - 1);
+      let b = "";
+      for (i in this.dict) {
+        // console.log(this.dict[i]);
+        b += this.dict[i] + "+";
+      }
+      b = b.substring(0, b.length - 1);
+      console.log(b);
+      console.log(a);
+      var str =
+        "https://propre-api.herokuapp.com/propre/api?files=" +
+        a +
+        "&hashes=" +
+        b +
+        "&email=" +
+        this.email;
+      fetch(str)
         .then((response) => response.json())
-        .then((response) => (this.info = response))
+        .then((response) =>
+          this.$router.push({ name: "Proof", params: { dict: response } })
+        )
         .catch((error) => console.log("error", error));
-      console.log(this.info);
-      // let body;
-      // .then((result) => console.log(result))
-      // .catch((error) => console.log("error", error));
-      // .then((result) => console.log(result))
-      // .catch((error) => console.log(this.dict, error));
     },
 
     hash: function (x) {
