@@ -24,7 +24,6 @@
               max-height: 40vh;
               overflow: hidden;
             "
-            :uploadUrl="uploadUrl"
             v-model="fileRecords"
             @select="filesSelected($event)"
             @beforedelete="onBeforeDelete($event)"
@@ -50,6 +49,7 @@
         </div>
       </div>
     </div>
+    <h1>{{ this.info }}aa</h1>
     <Header heading="CREATE YOUR PROOF" />
     <Slides />
   </div>
@@ -65,6 +65,7 @@ export default {
   name: "Home",
   data() {
     return {
+      info: null,
       email: "",
       dict: {},
       text: "",
@@ -91,7 +92,6 @@ export default {
       //   a += keys[i] + "+";
       // }
       // a = a.substring(0, a.length - 1);
-
       // let b = "";
       // for (i in this.dict) {
       //   // console.log(this.dict[i]);
@@ -127,28 +127,40 @@ export default {
       //   mode: "no-cors",
       //   headers: { "Content-Type": "text/plain" },
       // };
-
       // fetch("https://api.npms.io/v2/search?q=vue", requestOptions)
       //   .then((response) => response.json())
       //   .then((response) => console.log(response))
       //   .catch((error) => console.log("error", error));
-
       // var myHeaders = new Headers();
       // myHeaders.append("Access-Control-Allow-Origin", "http://localhost:8000");
-
       // var requestOptions = {
       //   method: "GET",
       //   headers: myHeaders,
       //   redirect: "follow",
       //   mode: "no-cors",
       // };
-
-      fetch("https://learnercircle.herokuapp.com")
-        .then((response) => response.text())
-        .then((result) => console.log(result))
+      // fetch("https://learnercircle.herokuapp.com")
+      //   .then((response) => response.text())
+      //   .then((result) => console.log(result))
+      //   .catch((error) => console.log("error", error));var myHeaders = new Headers();
+      // var myHeaders = new Headers();
+      // myHeaders.append("Access-Control-Allow-Origin", "*");
+      // var axios = require("axios");
+      // axios
+      //   .get("http://127.0.0.1:5000/")
+      //   .then((response) => (this.info = response));
+      // var requestOptions = {
+      //   method: "get",
+      //   mode: "no-cors",
+      // };
+      fetch(
+        "https://propre-api.herokuapp.com/propre/api?files=aa.out&hashes=aa"
+      )
+        .then((response) => response.json())
+        .then((response) => (this.info = response))
         .catch((error) => console.log("error", error));
+      console.log(this.info);
       // let body;
-
       // .then((result) => console.log(result))
       // .catch((error) => console.log("error", error));
       // .then((result) => console.log(result))
