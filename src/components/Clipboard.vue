@@ -66,9 +66,6 @@ input::-webkit-scrollbar {
 }
 
 .clip {
-  display: none;
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
 }
