@@ -22,15 +22,31 @@
                 @select="filesSelected($event)"
                 @beforedelete="onBeforeDelete($event)"
               ></VueFileAgent>
-              <div style="display: flex; margin-top: 50px; align-items: center">
+              <div
+                style="
+                  display: flex;
+                  margin-top: 50px;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
                 <b-form-input
+                  style="width: 90%"
                   placeholder="ENTER TRANSACTION ID"
                   v-model="transactionId"
                 ></b-form-input>
               </div>
-              <div style="display: flex; margin-top: 50px; align-items: center">
+              <div
+                style="
+                  display: flex;
+                  margin-top: 50px;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
                 <!-- <h3>File Path:</h3> -->
                 <b-form-input
+                  style="width: 80%"
                   placeholder="ENTER FILE PATH"
                   v-model="filePath"
                 ></b-form-input>
@@ -178,9 +194,7 @@ export default {
 
 .form-control {
   border: none;
-  width: 100%;
   background: white;
-  margin-left: auto;
 }
 
 .btn-secondary {
@@ -188,6 +202,7 @@ export default {
   color: #ffffff;
   /* border-color: white; */
   margin-top: 50px;
+  padding: 0.5rem 5rem;
 }
 
 .btn-secondary:hover {
