@@ -91,11 +91,7 @@ export default {
   },
   methods: {
     create: function () {
-      if (
-        this.transactionId == "" ||
-        this.filePath == "" ||
-        this.fileRecordsForUpload.length == 0
-      ) {
+      if (this.transactionId == "" || this.fileRecordsForUpload.length == 0) {
         alert("Please fill all the details");
         return;
       }
