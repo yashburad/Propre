@@ -92,8 +92,4 @@ input {
 .filename h5 {
   overflow-wrap: break-word;
 }
-
-.filepath {
-  overflow: scroll;
-}
 </style>
