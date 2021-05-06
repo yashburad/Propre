@@ -1,5 +1,5 @@
 <template id="t">
-  <b-container>
+  <b-container class="clip">
     <b-row>
       <b-col class="filename" md="2">
         <h5>{{ filename + "'s path" }} :</h5>
@@ -59,6 +59,11 @@ export default {
 <style scoped>
 input::-webkit-scrollbar {
   display: none;
+}
+
+.clip {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 input {
