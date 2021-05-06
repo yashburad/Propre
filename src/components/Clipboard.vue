@@ -57,6 +57,10 @@ export default {
 </script>
 
 <style scoped>
+input::-webkit-scrollbar {
+  display: none;
+}
+
 input {
   overflow: hidden;
 }
