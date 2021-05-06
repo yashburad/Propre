@@ -53,6 +53,7 @@ export default {
       dict: {},
       text: "",
       file: "",
+      text1: {},
       fileRecords: [],
       uploadHeaders: { "X-Test-Header": "vue-file-agent" },
       fileRecordsForUpload: [],
@@ -67,34 +68,84 @@ export default {
   },
   methods: {
     create: function () {
-      const keys = Object.keys(this.dict);
-      console.log(keys);
-      let a = "";
-      for (var i in keys) {
-        let x = keys[i].replaceAll(" ", "_");
-        a += x + "+";
-      }
-      a = a.substring(0, a.length - 1);
-      let b = "";
-      for (i in this.dict) {
-        b += this.dict[i] + "+";
-      }
-      b = b.substring(0, b.length - 1);
-      console.log(b);
-      console.log(a);
-      var str =
-        "https://propre-api.herokuapp.com/propre-api/proof?files=" +
-        a +
-        "&hashes=" +
-        b +
-        "&email=" +
-        this.email;
-      fetch(str)
+      // this.$router.push({
+      //   name: "Proof",
+      //   params: {
+      //     dict: {
+      //       "Email ID": "xyz",
+      //       Files: {
+      //         home:
+      //           "c3fca1ff3a6ab75943874c708b716a42de32fbb967b07b48406d7249b6009b9e",
+      //         new:
+      //           "c3fca1ff3a6ab75943874c708b716a42de32fbb967b07b48406d7249b6009b9e",
+      //       },
+      //     },
+      //   },
+      // });
+
+      let x = new Object();
+      x["Files"] = this.dict;
+      x["Email ID"] = this.email;
+      // console.log(JSON.stringify(x));
+      // fetch("https://propre-api.herokuapp.com/propre-api/proof", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   mode: "no-cors",
+      //   body: JSON.stringify(x),
+      // })
+      //   .then((response) => response.json())
+      //   .then((data) => console.log(data))
+      //   .catch((error) => {
+      //     console.error("Error:", error);
+      //   });
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: JSON.stringify(x),
+        redirect: "follow",
+      };
+
+      fetch("https://propre-api.herokuapp.com/propre-api/proof", requestOptions)
         .then((response) => response.json())
-        .then((response) =>
-          this.$router.push({ name: "Proof", params: { dict: response } })
+        .then((result) =>
+          this.$router.push({ name: "Proof", params: { dict: result } })
         )
         .catch((error) => console.log("error", error));
+      // console.log(this.text1);
+      // const keys = Object.keys(this.dict);
+      // console.log(keys);
+      // let a = "";
+      // for (var i in keys) {
+      //   let x = keys[i].replaceAll(" ", "_");
+      //   a += x + "+";
+      // }
+      // a = a.substring(0, a.length - 1);
+      // let b = "";
+      // for (i in this.dict) {
+      //   b += this.dict[i] + "+";
+      // }
+      // b = b.substring(0, b.length - 1);
+      // console.log(b);
+      // console.log(a);
+      // var str =
+      //   "https://propre-api.herokuapp.com/propre-api/proof?files=" +
+      //   a +
+      //   "&hashes=" +
+      //   b +
+      //   "&email=" +
+      //   this.email;
+      // console.log(str);
+      // fetch(str)
+      //   .then((response) => response.json())
+      //   .then((response) =>
+      //     this.$router.push({ name: "Proof", params: { dict: response } })
+      //   )
+      //   .catch((error) => console.log("error", error));
     },
 
     hash: function (x) {

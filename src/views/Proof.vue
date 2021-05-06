@@ -10,6 +10,9 @@
         <div class="proof">
           <h2>Thank you for using Propre.com!</h2>
           <h3 class="mb-4" style="margin: 20px 0px">Proof Details</h3>
+          <div style="display: flex; justify-content: center">
+            <b-button @click="save()" size="lg">SAVE YOUR PROOF</b-button>
+          </div>
           <b-container class="mb-3"
             ><b-row class="d-flex">
               <b-col sm="3" class="p-0" style="align-self: center">
@@ -80,6 +83,13 @@ export default {
     Clipboard,
   },
   methods: {
+    save: function () {
+      var FileSaver = require("file-saver");
+      var blob = new Blob([JSON.stringify(this.dict)], {
+        type: "text/plain;charset=utf-8",
+      });
+      FileSaver.saveAs(blob, "Proof.txt");
+    },
     doCopy: function () {
       this.$copyText(this.dict["Transaction ID"]).then(
         function (e) {
@@ -135,5 +145,11 @@ input {
 }
 h5 {
   margin-bottom: 0px;
+}
+
+.btn-secondary {
+  background-color: transparent !important;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 </style>
