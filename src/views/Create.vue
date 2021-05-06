@@ -68,6 +68,10 @@ export default {
   },
   methods: {
     create: function () {
+      if (this.fileRecordsForUpload.length == 0) {
+        alert("No Files Uploaded");
+        return;
+      }
       let x = new Object();
       x["Files"] = this.dict;
       x["Email ID"] = this.email;

@@ -11,14 +11,13 @@
           class="animate__animated animate__fadeInDown verify"
           style="padding-top: 5%; animation-duration: 4s"
         >
-          <h1>VERIFICATION</h1>
+          <!-- <h1>VERIFICATION</h1> -->
           <div style="display: flex; justify-content: center">
             <div class="verify-data">
               <VueFileAgent
                 :theme="'list'"
                 :maxFiles="1"
                 :deletable="true"
-                :uploadUrl="uploadUrl"
                 v-model="fileRecords"
                 @select="filesSelected($event)"
                 @beforedelete="onBeforeDelete($event)"
@@ -36,12 +35,24 @@
                   v-model="filePath"
                 ></b-form-input>
               </div>
-              <b-button size="lg" @click="computehash()"> VERIFY </b-button>
+              <b-button size="lg" @click="create()"> VERIFY </b-button>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <b-modal
+      title="Result"
+      :header-bg-variant="dark"
+      :header-text-variant="light"
+      :body-bg-variant="dark"
+      :body-text-variant="light"
+      :footer-bg-variant="dark"
+      :footer-text-variant="light"
+      v-model="showModal"
+    >
+      Verification {{ this.verify }}</b-modal
+    >
     <!-- <Clipboard /> -->
     <Header heading="VERIFY" />
 
@@ -58,6 +69,8 @@ export default {
   name: "Verify",
   data() {
     return {
+      dark: "dark",
+      light: "light",
       dict: {},
       text: "",
       file: "",
@@ -65,13 +78,50 @@ export default {
       fileRecordsForUpload: [],
       transactionId: "",
       filePath: "",
+      showModal: false,
+      verify: null,
     };
+  },
+  updated: function () {
+    this.computehash();
   },
   components: {
     Slides,
     Header,
   },
   methods: {
+    create: function () {
+      if (
+        this.transactionId == "" ||
+        this.filePath == "" ||
+        this.fileRecordsForUpload.length == 0
+      ) {
+        alert("Please fill all the details");
+        return;
+      }
+      let hash;
+      var key;
+      for (key in this.dict) {
+        console.log(key);
+        hash = this.dict[key];
+      }
+      let x =
+        "https://propre-api.herokuapp.com/propre-api/verify?txid=" +
+        this.transactionId +
+        "&path=" +
+        this.filePath +
+        "&hash=" +
+        hash;
+      console.log(x);
+      fetch(x)
+        .then((response) => response.json())
+        .then(
+          (result) =>
+            (this.verify = result["verify"] == false ? "Failed" : "Succeeded")
+        )
+        .then((this.showModal = true))
+        .catch((error) => console.log("error", error));
+    },
     hash: function (x) {
       var SHA256 = require("crypto-js/sha256");
       const reader = new FileReader();
@@ -83,6 +133,7 @@ export default {
     },
     computehash: function () {
       this.file = this.fileRecords[0];
+      // console.log(this.file.file.name);
       this.hash(this.file);
     },
     filesSelected: function (fileRecordsNewlySelected) {
@@ -124,6 +175,10 @@ export default {
 ::-ms-input-placeholder {
   color: white;
 } */
+
+.modal-header {
+  border-bottom: 1px solid #3c3e40 !important;
+}
 
 .form-control {
   border: none;

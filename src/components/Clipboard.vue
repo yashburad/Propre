@@ -1,10 +1,10 @@
 <template id="t">
   <b-container class="clip">
     <b-row>
-      <b-col class="filename" md="2">
+      <b-col class="filename" md="3">
         <h5>{{ filename + "'s path" }} :</h5>
       </b-col>
-      <b-col class="filepath" md="9">
+      <b-col class="filepath" md="8">
         <b-form-input class="w-100" :value="dict" readonly></b-form-input>
       </b-col>
       <b-col md="1" @click="doCopy" v-bind:title="message"
@@ -68,6 +68,10 @@ input::-webkit-scrollbar {
 
 input {
   overflow: hidden;
+}
+
+.filename {
+  align-self: center;
 }
 
 .form-control {
