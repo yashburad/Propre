@@ -12,8 +12,8 @@
             <b-col><img src="../assets/QR_Code.png" /> </b-col>
             <b-col style="align-self: center"
               ><h5 style="color: white">
-                THIS IS A NON-PROFITABLE PROJECT. PLEASE DONATE FOR US TO KEEP
-                THIS PROJECT FUNCTIONING!
+                THIS IS A NON-PROFITABLE ORGANISATION <br />
+                PLEASE DONATE TO KEEP <br />THIS PROJECT RUNNING!
               </h5>
               <h5 style="color: white">
                 <br />
