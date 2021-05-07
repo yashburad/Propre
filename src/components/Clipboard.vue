@@ -33,6 +33,7 @@
           :footer-text-variant="light"
           :hide-header="true"
           :ok-only="true"
+          :ok-variant="secondary"
         >
           Copied</b-modal
         ></b-col
@@ -53,6 +54,8 @@ export default {
       modalShow: false,
       dark: "dark",
       light: "light",
+      secondary: "secondary",
+
       message: "Copy the path to the Clipboard",
     };
   },

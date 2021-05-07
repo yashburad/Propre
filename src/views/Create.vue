@@ -41,6 +41,7 @@
               :hide-header="true"
               :ok-only="true"
               centered
+              :ok-variant="secondary"
             >
               NO FILES UPLOADED</b-modal
             >
@@ -66,6 +67,7 @@ export default {
       email: "",
       dark: "dark",
       light: "light",
+      secondary: "secondary",
       dict: {},
       text: "",
       file: "",

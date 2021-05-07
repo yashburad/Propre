@@ -62,6 +62,7 @@
                 :footer-text-variant="light"
                 :hide-header="true"
                 :ok-only="true"
+                :ok-variant="secondary"
                 centered
               >
                 PLEASE FILL ALL THE DETAILS</b-modal
@@ -81,6 +82,7 @@
       :footer-text-variant="light"
       v-model="showModal"
       :ok-only="true"
+      :ok-variant="secondary"
     >
       VERIFICATION {{ this.verify }}</b-modal
     >
@@ -102,6 +104,8 @@ export default {
     return {
       dark: "dark",
       light: "light",
+      secondary: "secondary",
+
       dict: {},
       text: "",
       file: "",
