@@ -66,14 +66,13 @@ export default {
           // alert("Copied");
           // this.data.x = true;
           console.log(e);
-        },
+        }.then(this.$refs["my-modal"].show()),
         function (e) {
           alert("Can not copy");
           console.log(e);
         }
       );
       // this.modalShow = true;
-      this.$refs["my-modal"].show();
     },
   },
 };
