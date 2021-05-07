@@ -136,7 +136,7 @@ export default {
       let csv = "Transaction ID,File Name,File Path\n";
       for (var keys in this.dict["Files Path"]) {
         csv +=
-          this.dict["Transaction ID"] +
+          this.dict["Transaction"]["txid"] +
           "," +
           keys +
           "," +

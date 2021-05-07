@@ -11,6 +11,9 @@
       <router-link to="/verify">
         <span>VERIFY</span>
       </router-link>
+      <router-link to="/donate">
+        <span>DONATE</span>
+      </router-link>
       <router-link to="/aboutus">
         <span>ABOUT US</span>
       </router-link>

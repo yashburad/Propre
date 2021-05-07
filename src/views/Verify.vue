@@ -72,20 +72,7 @@
         </div>
       </div>
     </div>
-    <b-modal
-      title="Result"
-      :header-bg-variant="dark"
-      :header-text-variant="light"
-      :body-bg-variant="dark"
-      :body-text-variant="light"
-      :footer-bg-variant="dark"
-      :footer-text-variant="light"
-      v-model="showModal"
-      :ok-only="true"
-      :ok-variant="secondary"
-    >
-      VERIFICATION {{ this.verify }}</b-modal
-    >
+
     <!-- <Clipboard /> -->
     <Header heading="VERIFY" />
 
@@ -148,9 +135,11 @@ export default {
       console.log(x);
       fetch(x)
         .then((response) => response.json())
-        .then(
-          (result) =>
-            (this.verify = result["verify"] == false ? "FAILES" : "SUCCEEDED")
+        .then((result) =>
+          this.$router.push({
+            name: "Result",
+            params: { proof: result["verify"] },
+          })
         )
         .then((this.showModal = true))
         .catch((error) => console.log("error", error));
