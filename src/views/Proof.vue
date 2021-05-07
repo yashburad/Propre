@@ -42,7 +42,7 @@
               </b-col>
               <b-col sm="8">
                 <b-form-input
-                  :value="this.dict['Transaction ID']"
+                  :value="this.dict['Transaction']['txid']"
                   readonly
                 ></b-form-input>
               </b-col>
@@ -122,9 +122,7 @@ export default {
   },
   methods: {
     redirect: function () {
-      let x =
-        "https://www.blockchain.com/btc-testnet/tx/" +
-        this.dict["Transaction ID"];
+      let x = this.dict["Transaction"]["blockchain"];
       window.open(x, "_blank");
     },
     save_json: function () {
@@ -153,7 +151,7 @@ export default {
       FileSaver.saveAs(blob, "transaction_details.csv");
     },
     doCopy: function () {
-      this.$copyText(this.dict["Transaction ID"]).then(
+      this.$copyText(this.dict["Transaction"]["txid"]).then(
         function (e) {
           console.log(e);
         }.then(this.$refs["my-modal"].show()),
