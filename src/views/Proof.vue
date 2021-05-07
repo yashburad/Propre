@@ -10,9 +10,29 @@
         <div class="proof">
           <h2>Thank you for using Propre.com!</h2>
           <h3 class="mb-4" style="margin: 20px 0px">Proof Details</h3>
-          <div style="display: flex; justify-content: center">
-            <b-button @click="save()" size="lg">SAVE YOUR PROOF</b-button>
-          </div>
+          <!-- <div style="display: flex; justify-content: center"> -->
+          <b-container>
+            <b-row>
+              <b-col
+                ><b-button @click="save_csv()" size="lg"
+                  >CHECK IT ON BLOCKCHAIN</b-button
+                ></b-col
+              ></b-row
+            >
+            <b-row>
+              <b-col>
+                <b-button @click="save_json()" size="lg"
+                  >SAVE YOUR PROOF AS JSON</b-button
+                >
+              </b-col>
+              <b-col>
+                <b-button @click="save_csv()" size="lg"
+                  >SAVE YOUR PROOF AS CSV</b-button
+                >
+              </b-col>
+            </b-row>
+          </b-container>
+          <!-- </div> -->
           <b-container class="mb-3"
             ><b-row class="d-flex">
               <b-col sm="3" class="p-0" style="align-self: center">
@@ -83,12 +103,30 @@ export default {
     Clipboard,
   },
   methods: {
-    save: function () {
+    save_json: function () {
       var FileSaver = require("file-saver");
-      var blob = new Blob([JSON.stringify(this.dict)], {
+      var blob = new Blob([JSON.stringify(this.dict, null, 4)], {
         type: "text/plain;charset=utf-8",
       });
-      FileSaver.saveAs(blob, "Proof.txt");
+      FileSaver.saveAs(blob, "transaction_details.json");
+    },
+    save_csv: function () {
+      let csv = "Transaction ID,File Name,File Path\n";
+      for (var keys in this.dict["Files Path"]) {
+        csv +=
+          this.dict["Transaction ID"] +
+          "," +
+          keys +
+          "," +
+          this.dict["Files Path"][keys] +
+          "\n";
+      }
+      // console.log(csv);
+      var FileSaver = require("file-saver");
+      var blob = new Blob([csv], {
+        type: "text/plain;charset=utf-8",
+      });
+      FileSaver.saveAs(blob, "transaction_details.csv");
     },
     doCopy: function () {
       this.$copyText(this.dict["Transaction ID"]).then(
