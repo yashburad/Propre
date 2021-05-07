@@ -52,6 +52,20 @@
                 ></b-form-input>
               </div>
               <b-button size="lg" @click="create()"> VERIFY </b-button>
+              <b-modal
+                ref="my-modal"
+                :header-bg-variant="dark"
+                :header-text-variant="light"
+                :body-bg-variant="dark"
+                :body-text-variant="light"
+                :footer-bg-variant="dark"
+                :footer-text-variant="light"
+                :hide-header="true"
+                :ok-only="true"
+                centered
+              >
+                Please fill all the details</b-modal
+              >
             </div>
           </div>
         </div>
@@ -66,6 +80,7 @@
       :footer-bg-variant="dark"
       :footer-text-variant="light"
       v-model="showModal"
+      :ok-only="true"
     >
       Verification {{ this.verify }}</b-modal
     >
@@ -108,7 +123,9 @@ export default {
   methods: {
     create: function () {
       if (this.transactionId == "" || this.fileRecordsForUpload.length == 0) {
-        alert("Please fill all the details");
+        // alert("");
+        this.$refs["my-modal"].show();
+
         return;
       }
       let hash;
@@ -186,6 +203,16 @@ export default {
 
 ::-ms-input-placeholder {
   color: white;
+} */
+
+/* .modal-footer > .btn-primary {
+  background: transparent;
+  border: 1px solid;
+} */
+
+/* .btn {
+  background: transparent;
+  border: 1px solid;
 } */
 
 .modal-header {
