@@ -7,7 +7,7 @@
       <b-col class="filepath" md="8">
         <b-form-input class="w-100" :value="dict" readonly></b-form-input>
       </b-col>
-      <b-col md="1" @click="doCopy" v-bind:title="message"
+      <b-col md="1" @click="doCopy()" v-bind:title="message"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -21,8 +21,22 @@
           />
           <path
             d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
-          /></svg
-      ></b-col>
+          />
+        </svg>
+        <b-modal
+          ref="my-modal"
+          :header-bg-variant="dark"
+          :header-text-variant="light"
+          :body-bg-variant="dark"
+          :body-text-variant="light"
+          :footer-bg-variant="dark"
+          :footer-text-variant="light"
+          :hide-header="true"
+          :ok-only="true"
+        >
+          Copied</b-modal
+        ></b-col
+      >
     </b-row>
   </b-container>
 </template>
@@ -36,6 +50,9 @@ export default {
   },
   data: function () {
     return {
+      modalShow: false,
+      dark: "dark",
+      light: "light",
       message: "Copy the path to the Clipboard",
     };
   },
@@ -43,7 +60,8 @@ export default {
     doCopy: function () {
       this.$copyText(this.dict).then(
         function (e) {
-          alert("Copied");
+          // alert("Copied");
+          // this.data.x = true;
           console.log(e);
         },
         function (e) {
@@ -51,6 +69,8 @@ export default {
           console.log(e);
         }
       );
+      // this.modalShow = true;
+      this.$refs["my-modal"].show();
     },
   },
 };
