@@ -140,7 +140,7 @@
         </b-container>
       </div>
     </div>
-    <Header heading="CREATE YOUR PROOF" />
+    <Header heading="RESULT" />
     <Slides />
   </div>
 </template>

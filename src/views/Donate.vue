@@ -9,18 +9,23 @@
       <div class="overlay1">
         <b-container style="margin-top: 50px">
           <b-row>
-            <b-col><img src="../assets/QR_Code.png" /></b-col>
+            <b-col><img src="../assets/QR_Code.png" /> </b-col>
             <b-col style="align-self: center"
               ><h5 style="color: white">
                 THIS IS A NON-PROFITABLE PROJECT. PLEASE DONATE FOR US TO KEEP
                 THIS PROJECT FUNCTIONING!
-              </h5></b-col
-            >
+              </h5>
+              <h5 style="color: white">
+                <br />
+                BITCOIN TESTNET ADDRESS :<br /><br />
+                mn9skozk63Aw6VF8Sc6RSW6CVY2FYDv5g9
+              </h5>
+            </b-col>
           </b-row>
         </b-container>
       </div>
     </div>
-    <Header heading="CREATE YOUR PROOF" />
+    <Header heading="DONATE" />
     <Slides />
   </div>
 </template>
