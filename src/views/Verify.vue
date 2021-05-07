@@ -64,7 +64,7 @@
                 :ok-only="true"
                 centered
               >
-                Please fill all the details</b-modal
+                PLEASE FILL ALL THE DETAILS</b-modal
               >
             </div>
           </div>
@@ -82,7 +82,7 @@
       v-model="showModal"
       :ok-only="true"
     >
-      Verification {{ this.verify }}</b-modal
+      VERIFICATION {{ this.verify }}</b-modal
     >
     <!-- <Clipboard /> -->
     <Header heading="VERIFY" />
@@ -146,7 +146,7 @@ export default {
         .then((response) => response.json())
         .then(
           (result) =>
-            (this.verify = result["verify"] == false ? "Failed" : "Succeeded")
+            (this.verify = result["verify"] == false ? "FAILES" : "SUCCEEDED")
         )
         .then((this.showModal = true))
         .catch((error) => console.log("error", error));

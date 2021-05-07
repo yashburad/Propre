@@ -42,7 +42,7 @@
               :ok-only="true"
               centered
             >
-              No Files Uploaded</b-modal
+              NO FILES UPLOADED</b-modal
             >
           </div>
         </div>
