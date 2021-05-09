@@ -46,7 +46,22 @@
                   readonly
                 ></b-form-input>
               </b-col>
-              <b-col style="text-align: left" sm="1">
+              <b-col style="text-align: center" sm="1">
+                <div
+                  v-bind:style="{
+                    opacity: `${show}`,
+                  }"
+                >
+                  <h6
+                    style="
+                      font-size: 14px;
+                      position: absolute;
+                      margin-top: -20px;
+                    "
+                  >
+                    Copied!
+                  </h6>
+                </div>
                 <svg
                   @click="doCopy"
                   v-bind:title="message"
@@ -113,6 +128,7 @@ export default {
       secondary: "secondary",
       dict: this.$route.params.dict,
       y: "a",
+      show: 0,
     };
   },
   components: {
@@ -121,6 +137,12 @@ export default {
     Clipboard,
   },
   methods: {
+    showText: function () {
+      this.show = 1;
+      setTimeout(() => {
+        this.show = 0;
+      }, 1500);
+    },
     redirect: function () {
       let x = this.dict["Transaction"]["blockchain"];
       window.open(x, "_blank");
@@ -154,7 +176,7 @@ export default {
       this.$copyText(this.dict["Transaction"]["txid"]).then(
         function (e) {
           console.log(e);
-        }.then(this.$refs["my-modal"].show()),
+        }.then(this.showText()),
         function (e) {
           alert("Can not copy");
           console.log(e);

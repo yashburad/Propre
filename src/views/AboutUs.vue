@@ -14,11 +14,11 @@
               <p>
                 Proof of existence (Link) like application with the added
                 functionality of adding more data per transaction (with the help
-                of a Merkle tree). Proof of existence (Link) like application
-                with the added functionality of adding more data per transaction
-                (with the help of a Merkle tree). Proof of existence (Link) like
-                application with the added functionality of adding more data per
-                transaction (with the help of a Merkle tree).
+                of a Merkle tree). A service to anonymously and securely store
+                an online distributed proof of existence for any document. Your
+                documents are NOT stored in our database or in the bitcoin
+                blockchain, so you don't have to worry about your data being
+                accessed by others.
               </p>
             </b-row>
           </b-container>

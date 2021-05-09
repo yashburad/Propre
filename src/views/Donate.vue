@@ -10,11 +10,13 @@
         <b-container style="margin-top: 50px">
           <b-row>
             <b-col
+              sm="6"
               class="animate__animated animate__fadeInLeft"
               style="animation-duration: 3s"
               ><img src="../assets/QR_Code.png" />
             </b-col>
             <b-col
+              sm="6"
               class="animate__animated animate__fadeInRight"
               style="align-self: center; animation-duration: 3s"
               ><h5 style="color: white">
