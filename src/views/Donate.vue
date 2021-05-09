@@ -9,8 +9,14 @@
       <div class="overlay1">
         <b-container style="margin-top: 50px">
           <b-row>
-            <b-col><img src="../assets/QR_Code.png" /> </b-col>
-            <b-col style="align-self: center"
+            <b-col
+              class="animate__animated animate__fadeInLeft"
+              style="animation-duration: 3s"
+              ><img src="../assets/QR_Code.png" />
+            </b-col>
+            <b-col
+              class="animate__animated animate__fadeInRight"
+              style="align-self: center; animation-duration: 3s"
               ><h5 style="color: white">
                 THIS IS A NON-PROFITABLE ORGANISATION <br />
                 PLEASE DONATE TO KEEP <br />THIS PROJECT RUNNING!

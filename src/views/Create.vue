@@ -9,7 +9,7 @@
       <div class="overlay1">
         <div
           class="create animate__animated animate__fadeInDown"
-          style="animation-duration: 4s"
+          style="animation-duration: 3s"
         >
           <VueFileAgent
             :theme="'list'"
@@ -45,9 +45,16 @@
             >
               NO FILES UPLOADED</b-modal
             >
+            <h4 class="error" v-show="this.bool">NO FILES UPLOADED</h4>
           </div>
         </div>
       </div>
+    </div>
+    <div v-show="this.loader" class="loader">
+      <b-spinner
+        style="width: 5rem; height: 5rem; color: white"
+        label="Spinning"
+      ></b-spinner>
     </div>
     <Header heading="CREATE YOUR PROOF" />
     <Slides />
@@ -75,6 +82,8 @@ export default {
       fileRecords: [],
       uploadHeaders: { "X-Test-Header": "vue-file-agent" },
       fileRecordsForUpload: [],
+      bool: false,
+      loader: false,
     };
   },
   components: {
@@ -87,9 +96,12 @@ export default {
   methods: {
     create: function () {
       if (this.fileRecordsForUpload.length == 0) {
-        this.$refs["my-modal"].show();
+        // this.$refs["my-modal"].show();
+        this.bool = true;
         return;
       }
+      this.loader = true;
+
       let x = new Object();
       x["Files"] = this.dict;
       x["Email ID"] = this.email;
@@ -109,7 +121,10 @@ export default {
         .then((result) =>
           this.$router.push({ name: "Proof", params: { dict: result } })
         )
-        .catch((error) => console.log("error", error));
+        .catch((error) => {
+          console.log("error", error);
+          this.loader = false;
+        });
     },
 
     hash: function (x) {
@@ -155,6 +170,48 @@ export default {
 </script>
 
 <style scoped>
+.loader {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 60%);
+  display: grid;
+  place-content: center;
+}
+.error {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  position: absolute;
+  margin-top: 30px;
+  color: #9aa0a8;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
 .vuefileagent {
   overflow: scroll !important;
 }

@@ -9,7 +9,7 @@
       <div class="overlay1">
         <div
           class="animate__animated animate__fadeInDown verify"
-          style="padding-top: 5%; animation-duration: 4s"
+          style="padding-top: 5%; animation-duration: 3s"
         >
           <!-- <h1>VERIFICATION</h1> -->
           <div style="display: flex; justify-content: center">
@@ -52,27 +52,22 @@
                 ></b-form-input>
               </div>
               <b-button size="lg" @click="create()"> VERIFY </b-button>
-              <b-modal
-                ref="my-modal"
-                :header-bg-variant="dark"
-                :header-text-variant="light"
-                :body-bg-variant="dark"
-                :body-text-variant="light"
-                :footer-bg-variant="dark"
-                :footer-text-variant="light"
-                :hide-header="true"
-                :ok-only="true"
-                :ok-variant="secondary"
-                centered
-              >
-                PLEASE FILL ALL THE DETAILS</b-modal
-              >
+              <div style="display: flex; justify-content: center">
+                <h4 class="error" v-show="this.bool">
+                  PLEASE FILL ALL THE DETAILS
+                </h4>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    <div v-show="this.loader" class="loader">
+      <b-spinner
+        style="width: 5rem; height: 5rem; color: white"
+        label="Spinning"
+      ></b-spinner>
+    </div>
     <!-- <Clipboard /> -->
     <Header heading="VERIFY" />
 
@@ -89,10 +84,6 @@ export default {
   name: "Verify",
   data() {
     return {
-      dark: "dark",
-      light: "light",
-      secondary: "secondary",
-
       dict: {},
       text: "",
       file: "",
@@ -100,8 +91,9 @@ export default {
       fileRecordsForUpload: [],
       transactionId: "",
       filePath: "",
-      showModal: false,
       verify: null,
+      bool: false,
+      loader: false,
     };
   },
   updated: function () {
@@ -114,11 +106,10 @@ export default {
   methods: {
     create: function () {
       if (this.transactionId == "" || this.fileRecordsForUpload.length == 0) {
-        // alert("");
-        this.$refs["my-modal"].show();
-
+        this.bool = true;
         return;
       }
+      this.loader = true;
       let hash;
       var key;
       for (key in this.dict) {
@@ -141,8 +132,11 @@ export default {
             params: { proof: result["verify"] },
           })
         )
-        .then((this.showModal = true))
-        .catch((error) => console.log("error", error));
+        .then()
+        .catch((error) => {
+          console.log("error", error);
+          this.loader = false;
+        });
     },
     hash: function (x) {
       var SHA256 = require("crypto-js/sha256");
@@ -185,28 +179,47 @@ export default {
 </script>
 
 <style scoped>
-/* ::placeholder {
-  color: white;
-  opacity: 1; 
+.loader {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 60%);
+  display: grid;
+  place-content: center;
+}
+.error {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  position: absolute;
+  margin-top: 30px;
+  color: #9aa0a8;
 }
 
-:-ms-input-placeholder {
-  color: white;
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
-
-::-ms-input-placeholder {
-  color: white;
-} */
-
-/* .modal-footer > .btn-primary {
-  background: transparent;
-  border: 1px solid;
-} */
-
-/* .btn {
-  background: transparent;
-  border: 1px solid;
-} */
 
 .modal-header {
   border-bottom: 1px solid #3c3e40 !important;
