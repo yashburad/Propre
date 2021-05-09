@@ -13,11 +13,7 @@
         style="text-align: center"
         v-bind:title="message"
       >
-        <div
-          v-bind:style="{
-            opacity: `${show}`,
-          }"
-        >
+        <div v-show="this.show" class="animate__animated animate__fadeIn">
           <h6 style="font-size: 14px; position: absolute; margin-top: -20px">
             Copied!
           </h6>
@@ -51,15 +47,15 @@ export default {
   },
   data: function () {
     return {
-      show: 0,
+      show: false,
       message: "Copy the path to the Clipboard",
     };
   },
   methods: {
     showText: function () {
-      this.show = 1;
+      this.show = true;
       setTimeout(() => {
-        this.show = 0;
+        this.show = false;
       }, 1500);
     },
     doCopy: function () {

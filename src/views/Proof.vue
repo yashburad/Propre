@@ -48,9 +48,8 @@
               </b-col>
               <b-col style="text-align: center" sm="1">
                 <div
-                  v-bind:style="{
-                    opacity: `${show}`,
-                  }"
+                  v-show="this.show"
+                  class="animate__animated animate__fadeIn"
                 >
                   <h6
                     style="
@@ -128,7 +127,7 @@ export default {
       secondary: "secondary",
       dict: this.$route.params.dict,
       y: "a",
-      show: 0,
+      show: false,
     };
   },
   components: {
@@ -138,9 +137,9 @@ export default {
   },
   methods: {
     showText: function () {
-      this.show = 1;
+      this.show = true;
       setTimeout(() => {
-        this.show = 0;
+        this.show = false;
       }, 1500);
     },
     redirect: function () {
