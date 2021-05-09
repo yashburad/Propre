@@ -78,23 +78,8 @@
                     d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"
                   />
                 </svg>
-                <b-modal
-                  ref="my-modal"
-                  :header-bg-variant="dark"
-                  :header-text-variant="light"
-                  :body-bg-variant="dark"
-                  :body-text-variant="light"
-                  :footer-bg-variant="dark"
-                  :footer-text-variant="light"
-                  :hide-header="true"
-                  :ok-only="true"
-                  :ok-variant="secondary"
-                >
-                  Copied</b-modal
-                >
-              </b-col>
-            </b-row></b-container
-          >
+              </b-col> </b-row
+          ></b-container>
 
           <div
             class="path"
@@ -122,9 +107,6 @@ export default {
   data() {
     return {
       message: "Copy to the clipboard",
-      dark: "dark",
-      light: "light",
-      secondary: "secondary",
       dict: this.$route.params.dict,
       y: "a",
       show: false,

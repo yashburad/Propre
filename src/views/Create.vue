@@ -30,21 +30,7 @@
             <!-- <router-link to="/proof"> -->
             <b-button @click="create()" size="lg">CREATE YOUR PROOF</b-button>
             <!-- </router-link> -->
-            <b-modal
-              ref="my-modal"
-              :header-bg-variant="dark"
-              :header-text-variant="light"
-              :body-bg-variant="dark"
-              :body-text-variant="light"
-              :footer-bg-variant="dark"
-              :footer-text-variant="light"
-              :hide-header="true"
-              :ok-only="true"
-              centered
-              :ok-variant="secondary"
-            >
-              NO FILES UPLOADED</b-modal
-            >
+
             <h4 class="error" v-show="this.bool">NO FILES UPLOADED</h4>
           </div>
         </div>
@@ -72,9 +58,7 @@ export default {
   data() {
     return {
       email: "",
-      dark: "dark",
-      light: "light",
-      secondary: "secondary",
+
       dict: {},
       text: "",
       file: "",
@@ -96,7 +80,6 @@ export default {
   methods: {
     create: function () {
       if (this.fileRecordsForUpload.length == 0) {
-        // this.$refs["my-modal"].show();
         this.bool = true;
         return;
       }

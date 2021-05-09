@@ -23,7 +23,7 @@
             </b-row>
           </b-container>
           <h1>Founders</h1>
-          <b-container style="margin-top: 50px">
+          <b-container style="margin-top: 50px; padding-bottom: 50px">
             <b-row
               class="animate__animated animate__fadeInUp"
               style="animation-duration: 2s"
