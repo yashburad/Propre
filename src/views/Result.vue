@@ -8,31 +8,6 @@
     >
       <div class="overlay1">
         <b-container style="margin-top: 100px">
-          <!-- <b-row class="d-block" v-show="this.result"
-            ><div class="success-animation">
-              <svg
-                class="checkmark"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 52 52"
-              >
-                <circle
-                  class="checkmark__circle"
-                  cx="26"
-                  cy="26"
-                  r="25"
-                  fill="none"
-                />
-                <path
-                  class="checkmark__check"
-                  fill="none"
-                  d="M14.1 27.2l7.1 7.2 16.7-16.8"
-                />
-              </svg>
-            </div>
-            <h2 style="color: white; padding-top: 50px">
-              VERIFICATION SUCCESSFUL
-            </h2>
-          </b-row> -->
           <b-row class="d-block" v-if="this.result">
             <div class="ui-success">
               <svg
@@ -136,6 +111,12 @@
               </svg>
             </div>
             <h2 style="color: white; padding-top: 50px">VERIFICATION FAILED</h2>
+            <h4
+              class="animate__shakeX animate__animated"
+              style="color: white; padding-top: 50px"
+            >
+              {{ this.message }}
+            </h4>
           </b-row>
         </b-container>
       </div>
@@ -155,11 +136,20 @@ export default {
   name: "Result",
 
   data() {
-    return { result: this.$route.params.proof };
+    return {
+      dict: this.$route.params.proof,
+      result: this.$route.params.proof.verify,
+      message: "",
+    };
   },
   components: {
     Slides,
     Header,
+  },
+  mounted: function () {
+    if (this.dict["Status"] == false) {
+      this.message = this.dict["Error"];
+    }
   },
 };
 </script>

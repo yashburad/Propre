@@ -129,7 +129,7 @@ export default {
         .then((result) =>
           this.$router.push({
             name: "Result",
-            params: { proof: result["verify"] },
+            params: { proof: result },
           })
         )
         .then()
