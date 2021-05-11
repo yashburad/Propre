@@ -18,16 +18,30 @@
               <p style="text-align: justify">
                 Propre (standing for Proof Of Presence) is an application that
                 allows you to verify the authenticity of your documents and
-                files. For example, you need to share a letter to someone who
-                might share it with a third party. You develop the letter and
-                upload it under Create Your Proof on Propre. You receive a
-                Transaction ID and File Path for that file. You can now send
-                this letter to that person who can share with it the concerned
-                third parties. You can make this transaction ID and file path
-                public. The third party can upload the letter under Verification
-                on Propre along with the transaction ID and file hash that you
-                had made public earlier. If the letter is unaltered, they will
-                receive a success status, or a failed status otherwise.
+                files.
+                <br /><br />
+                For example, you need to share a letter to someone who might
+                share it with a third party. You develop the letter and upload
+                it under Create Your Proof on Propre. You receive a Transaction
+                ID and File Path for that file. You can now send this letter to
+                that person who can share with it the concerned third parties.
+                You can make this transaction ID and file path public. The third
+                party can upload the letter under Verification on Propre along
+                with the transaction ID and file hash that you had made public
+                earlier. If the letter is unaltered, they will receive a success
+                status, or a failed status otherwise.
+                <br />
+                <br />
+                The application computes the hash for the files you upload and
+                creates a Merkle Tree from it. The root hash is then uploaded
+                via a transaction to the bitcoin network. The bitcoin network is
+                public and immutable. This implies that everyone can see the
+                data but no one can alter it. This creates the proof. For
+                verification the data in the given transaction ID is retrieved
+                and the hash of the uploaded file is computed. The file path and
+                file hash are used to compute the root hash which is verified
+                against the data from the transaction ID. This verifies the
+                authenticity of the document.
               </p>
             </b-row>
           </b-container>
