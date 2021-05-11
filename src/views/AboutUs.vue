@@ -15,7 +15,7 @@
             <h1 style="margin-bottom: 30px">About the Project</h1>
 
             <b-row>
-              <p>
+              <p style="text-align: justify">
                 Propre (standing for Proof Of Presence) is an application that
                 allows you to verify the authenticity of your documents and
                 files. For example, you need to share a letter to someone who
