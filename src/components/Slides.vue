@@ -29,7 +29,7 @@
 <style>
 .bm-burger-button {
   margin-top: 45vh !important;
-  position: fixed;
+  position: fixed !important;
 }
 
 .slide a:hover {

@@ -15,7 +15,9 @@
                 <img style="width: 100%" src="../assets/create1.png" />
               </b-col>
               <b-col sm="6" style="align-self: center"
-                ><h6>1. Choose Files you want to create a proof for</h6></b-col
+                ><h6>
+                  1. Choose the Files you want to create a proof for
+                </h6></b-col
               >
             </b-row>
             <b-row class="mt-5">
@@ -24,8 +26,8 @@
               ><b-col sm="6" style="align-self: center"
                 ><h6>
                   2. Fill in your Email ID to receive the transaction and proof
-                  on your email.(Optional)<br /><br />
-                  Click on create your proof to proceed ahead.
+                  on your email (Optional)<br /><br />
+                  Click on create your proof to proceed ahead
                 </h6></b-col
               ></b-row
             >
@@ -37,10 +39,15 @@
                   3. Hola! Your proof is ready!
 
                   <br /><br />
-                  You can save the proof as any file type of your choice -
-                  .csv/.json. <br /><br />
+                  You can save the proof as any file type of your choice : csv
+                  or json <br /><br />
+                  Alternatively, you can also copy the details <br /><br />
                   You can check the transaction id on the bitcoin blockchain
-                  also.
+                  also
+
+                  <br /><br />
+                  If you see an error, wait for a couple of minutes and try
+                  again to see it on bitcoin blockchain.
                 </h6></b-col
               ></b-row
             >
@@ -49,10 +56,7 @@
             <h1>How to verify your proof</h1>
             <b-row style="margin-top: 50px">
               <b-col sm="6" style="align-self: center"
-                ><h6>
-                  1. Choose any File which you want to verify for which a proof
-                  is created
-                </h6></b-col
+                ><h6>1. Choose the File that you want to verify</h6></b-col
               ><b-col sm="6">
                 <img style="width: 100%" src="../assets/verify1.png" />
               </b-col>
@@ -61,9 +65,9 @@
               <b-col sm="6" style="align-self: center"
                 ><h6>
                   2. Fill in the transaction id and the file path for that
-                  respective file.
+                  respective file
                   <br /><br />
-                  Click on verify to proceed ahead.
+                  Click on verify to proceed ahead
                 </h6></b-col
               ><b-col sm="6">
                 <img style="width: 100%" src="../assets/verify2.png" /> </b-col
