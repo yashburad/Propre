@@ -39,10 +39,46 @@
               <b-col class="images">
                 <img src="../assets/yash.jpg" />
                 <h2>Yash Burad</h2>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/in/yash-burad-6aa443177/"
+                    target="_blank"
+                  >
+                    <i
+                      class="fa fa-linkedin-square"
+                      style="font-size: 28px; margin-right: 20px"
+                    ></i>
+                  </a>
+                  <a href="https://github.com/yashburad" target="_blank">
+                    <i
+                      class="fa fa-github"
+                      style="font-size: 28px"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+                </div>
               </b-col>
               <b-col class="images">
                 <img src="../assets/yvj.jpg" />
                 <h2>Yashvardhan Jain</h2>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/in/yashvardhanjain-yvj/"
+                    target="_blank"
+                  >
+                    <i
+                      class="fa fa-linkedin-square"
+                      style="font-size: 28px; margin-right: 20px"
+                    ></i>
+                  </a>
+                  <a href="https://github.com/IamYVJ" target="_blank">
+                    <i
+                      class="fa fa-github"
+                      style="font-size: 28px"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+                </div>
               </b-col>
             </b-row>
           </b-container>
@@ -91,6 +127,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  color: white;
+}
+
 .images h2 {
   margin-top: 20px;
 }
