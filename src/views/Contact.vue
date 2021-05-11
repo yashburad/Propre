@@ -26,11 +26,11 @@
             </b-row>
             <b-row class="mt-5 mb-5">
               <b-col>
-                <b-form-input
-                  style="height: 15vh"
-                  size="lg"
+                <textarea
+                  class="form-control"
+                  rows="5"
                   placeholder="FEEDBACK"
-                ></b-form-input>
+                ></textarea>
               </b-col>
             </b-row>
             <b-button size="lg"> SUBMIT </b-button>
