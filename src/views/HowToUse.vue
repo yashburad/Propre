@@ -52,7 +52,7 @@
               ></b-row
             >
           </b-container>
-          <b-container class="mt-5">
+          <b-container class="mt-5 pb-5">
             <h1>How to verify your proof</h1>
             <b-row style="margin-top: 50px">
               <b-col sm="6" style="align-self: center"
