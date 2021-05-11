@@ -4,7 +4,9 @@
       <router-link to="/">
         <span>HOME</span>
       </router-link>
-
+      <router-link to="/howtouse">
+        <span>HOW TO USE</span>
+      </router-link>
       <router-link to="/create">
         <span>CREATE YOUR PROOF</span>
       </router-link>

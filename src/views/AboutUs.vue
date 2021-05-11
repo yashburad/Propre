@@ -8,8 +8,12 @@
     >
       <div class="overlay1">
         <div class="aboutus">
-          <h1>About the Project</h1>
-          <b-container style="padding: 20px 0px">
+          <b-container
+            class="animate__animated animate__fadeIn"
+            style="padding: 20px 0px; animation-duration: 4s"
+          >
+            <h1 style="margin-bottom: 30px">About the Project</h1>
+
             <b-row>
               <p>
                 Proof of existence (Link) like application with the added
@@ -22,12 +26,16 @@
               </p>
             </b-row>
           </b-container>
-          <h1>Founders</h1>
-          <b-container style="margin-top: 50px; padding-bottom: 50px">
-            <b-row
-              class="animate__animated animate__fadeInUp"
-              style="animation-duration: 2s"
-            >
+          <b-container
+            class="animate__animated animate__fadeInUp"
+            style="
+              margin-top: 30px;
+              padding-bottom: 50px;
+              animation-duration: 4s;
+            "
+          >
+            <h1 style="margin-bottom: 50px">Founders</h1>
+            <b-row>
               <b-col class="images">
                 <img src="../assets/yash.jpg" />
                 <h2>Yash Burad</h2>
@@ -38,12 +46,17 @@
               </b-col>
             </b-row>
           </b-container>
-          <h1>Mentor</h1>
-          <b-container style="margin-top: 50px; padding-bottom: 50px">
-            <b-row
-              class="animate__animated animate__fadeInUp"
-              style="animation-duration: 2s"
-            >
+          <b-container
+            class="animate__animated animate__fadeInUp"
+            style="
+              margin-top: 30px;
+              padding-bottom: 50px;
+              animation-duration: 4s;
+            "
+          >
+            <h1 style="margin-bottom: 50px">Mentor</h1>
+
+            <b-row>
               <b-col class="images">
                 <img style="height: 50vh" src="../assets/prof.jpg" />
                 <h2>PROF. MAHAVIR JHAWAR</h2>
