@@ -16,13 +16,18 @@
 
             <b-row>
               <p>
-                Proof of existence (Link) like application with the added
-                functionality of adding more data per transaction (with the help
-                of a Merkle tree). A service to anonymously and securely store
-                an online distributed proof of existence for any document. Your
-                documents are NOT stored in our database or in the bitcoin
-                blockchain, so you don't have to worry about your data being
-                accessed by others.
+                Propre (standing for Proof Of Presence) is an application that
+                allows you to verify the authenticity of your documents and
+                files. For example, you need to share a letter to someone who
+                might share it with a third party. You develop the letter and
+                upload it under Create Your Proof on Propre. You receive a
+                Transaction ID and File Path for that file. You can now send
+                this letter to that person who can share with it the concerned
+                third parties. You can make this transaction ID and file path
+                public. The third party can upload the letter under Verification
+                on Propre along with the transaction ID and file hash that you
+                had made public earlier. If the letter is unaltered, they will
+                receive a success status, or a failed status otherwise.
               </p>
             </b-row>
           </b-container>
