@@ -21,16 +21,15 @@
               >
             </b-row>
             <b-row class="mt-5">
-              <b-col sm="6">
-                <img style="width: 100%" src="../assets/create2.png" /> </b-col
-              ><b-col sm="6" style="align-self: center"
+              <b-col sm="6" style="align-self: center"
                 ><h6>
                   2. Fill in your Email ID to receive the transaction and proof
                   on your email (Optional)<br /><br />
                   Click on create your proof to proceed ahead
                 </h6></b-col
-              ></b-row
-            >
+              ><b-col sm="6">
+                <img style="width: 100%" src="../assets/create2.png" /> </b-col
+            ></b-row>
             <b-row class="mt-5">
               <b-col sm="6">
                 <img style="width: 100%" src="../assets/create3.png" /> </b-col
@@ -62,21 +61,23 @@
               </b-col>
             </b-row>
             <b-row class="mt-5">
-              <b-col sm="6" style="align-self: center"
+              <b-col sm="6">
+                <img style="width: 100%" src="../assets/verify2.png" /> </b-col
+              ><b-col sm="6" style="align-self: center"
                 ><h6>
                   2. Fill in the transaction id and the file path for that
                   respective file
                   <br /><br />
                   Click on verify to proceed ahead
                 </h6></b-col
-              ><b-col sm="6">
-                <img style="width: 100%" src="../assets/verify2.png" /> </b-col
-            ></b-row>
+              ></b-row
+            >
             <b-row class="mt-5">
               <b-col sm="6" style="align-self: center"
                 ><h6>
                   3. If successful, the screen will display verification
-                  successful otherwise verification failed
+                  successful <br /><br />
+                  otherwise verification failed
                 </h6></b-col
               ><b-col sm="6">
                 <img style="width: 100%" src="../assets/verify3.png" /> </b-col
