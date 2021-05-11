@@ -22,18 +22,6 @@
               </p>
             </b-row>
           </b-container>
-          <h1>Mentor</h1>
-          <b-container style="margin-top: 50px; padding-bottom: 50px">
-            <b-row
-              class="animate__animated animate__fadeInUp"
-              style="animation-duration: 2s"
-            >
-              <b-col class="images">
-                <img src="../assets/prof.jpg" />
-                <h2>PROF. MAHAVIR JHAWAR</h2>
-              </b-col>
-            </b-row>
-          </b-container>
           <h1>Founders</h1>
           <b-container style="margin-top: 50px; padding-bottom: 50px">
             <b-row
@@ -47,6 +35,18 @@
               <b-col class="images">
                 <img src="../assets/yvj.jpg" />
                 <h2>Yashvardhan Jain</h2>
+              </b-col>
+            </b-row>
+          </b-container>
+          <h1>Mentor</h1>
+          <b-container style="margin-top: 50px; padding-bottom: 50px">
+            <b-row
+              class="animate__animated animate__fadeInUp"
+              style="animation-duration: 2s"
+            >
+              <b-col class="images">
+                <img style="height: 50vh" src="../assets/prof.jpg" />
+                <h2>PROF. MAHAVIR JHAWAR</h2>
               </b-col>
             </b-row>
           </b-container>
