@@ -9,7 +9,7 @@
       <div class="overlay1">
         <div class="howtouse">
           <b-container>
-            <h1>How to create your proof</h1>
+            <h1 style="margin: 20px 0px 70px 0px">How to create your proof</h1>
             <b-row style="margin-top: 50px">
               <b-col sm="6">
                 <img style="width: 100%" src="../assets/create1.png" />
@@ -51,8 +51,8 @@
               ></b-row
             >
           </b-container>
-          <b-container class="mt-5 pb-5">
-            <h1>How to verify your proof</h1>
+          <b-container class="mt-5" style="padding-bottom: 100px">
+            <h1 style="margin: 80px 0px">How to verify your proof</h1>
             <b-row style="margin-top: 50px">
               <b-col sm="6" style="align-self: center"
                 ><h6>1. Choose the File that you want to verify</h6></b-col
@@ -76,7 +76,7 @@
               <b-col sm="6" style="align-self: center"
                 ><h6>
                   3. If successful, the screen will display verification
-                  successful <br /><br />
+                  successful <br />
                   otherwise verification failed
                 </h6></b-col
               ><b-col sm="6">

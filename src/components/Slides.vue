@@ -19,6 +19,9 @@
       <router-link to="/aboutus">
         <span>ABOUT US</span>
       </router-link>
+      <router-link to="/contactus">
+        <span>CONTACT US</span>
+      </router-link>
       <!-- <a id="home" href="#">
         <span>VERIFY</span>
       </a> -->
