@@ -1,3 +1,7 @@
 /               /
 /create         /create
 /verify         /verify
+/aboutus        /aboutus
+/donate         /donate
+
+
