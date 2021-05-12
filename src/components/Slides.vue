@@ -19,6 +19,9 @@
       <router-link to="/aboutus">
         <span>ABOUT US</span>
       </router-link>
+      <router-link to="/howitworks">
+        <span>HOW DOES IT WORK</span>
+      </router-link>
       <router-link to="/contactus">
         <span>CONTACT US</span>
       </router-link>
