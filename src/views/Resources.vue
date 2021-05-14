@@ -15,6 +15,7 @@
               <ul style="color: white">
                 <li>
                   <a
+                    target="_blank"
                     href="https://propre.netlify.app/howtouse"
                     style="color: white"
                     ><h4 style="margin-top: 20px">HOW TO USE PROPRE</h4></a
@@ -22,6 +23,7 @@
                 </li>
                 <li>
                   <a
+                    target="_blank"
                     href="https://propre.netlify.app/howitworks"
                     style="color: white"
                     ><h4 style="margin-top: 20px">HOW DOES PROPE WORK</h4></a
@@ -29,6 +31,7 @@
                 </li>
                 <li>
                   <a
+                    target="_blank"
                     href="https://documenter.getpostman.com/view/15691586/TzRVekwe"
                     style="color: white"
                     ><h4 style="margin-top: 20px">API DOCUMENTATION</h4></a
@@ -36,6 +39,7 @@
                 </li>
                 <li>
                   <a
+                    target="_blank"
                     href="https://propre-api.herokuapp.com/propre-api/"
                     style="color: white"
                     ><h4 style="margin-top: 20px">API URL</h4></a
