@@ -10,22 +10,13 @@
         <div class="aboutus"></div>
         <b-container>
           <h1 style="color: white">HOW DOES IT WORK</h1>
-          <b-row>
+          <b-row style="margin: 60px 0px; padding-bottom: 50px">
             <b-col>
-              <p style="color: white; text-align: justify; margin-top: 30px">
-                Suppose a user wants to upload four files to the network. He
-                uploads the files on PROPRE.com.The backend computes the hash of
-                each file and merges it with the hashes of the other files.The
-                figure below illustrates how this will be done.
-
-                <br /><br />
-                The user will receive the Transaction ID along with the
-                following data for each file i:•Path Hash, linking the hash of
-                File i to the hash data in the transactionTh transaction uses
-                OP_RETURN to save the final hash data in the transaction on the
-                network.This final hash data comprises of the hashes of all
-                files together
-              </p>
+              <iframe
+                src="https://drive.google.com/file/d/1jr0hCHAZpGdYT4lWgfu8sxouE-w-wLvO/preview"
+                width="700px"
+                height="800px"
+              ></iframe>
             </b-col>
           </b-row>
         </b-container>
