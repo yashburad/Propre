@@ -20,7 +20,10 @@
         <span>ABOUT US</span>
       </router-link>
       <router-link to="/howitworks">
-        <span>HOW DOES IT WORK</span>
+        <span>HOW IT WORKS</span>
+      </router-link>
+      <router-link to="/resources">
+        <span>RESOURCES</span>
       </router-link>
       <router-link to="/contactus">
         <span>CONTACT US</span>

@@ -23,7 +23,7 @@
       </div>
     </div>
     <!-- <Clipboard /> -->
-    <Header heading="HOW DOES IT WORK" />
+    <Header heading="HOW IT WORKS" />
 
     <Slides />
   </div>
