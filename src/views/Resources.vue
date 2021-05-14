@@ -12,32 +12,36 @@
           <h1 style="color: white">RESOURCES</h1>
           <b-row style="margin: 40px 0px; padding-bottom: 50px">
             <b-col style="text-align: left">
-              <a href="https://propre.netlify.app/howtouse" style="color: white"
-                ><h4 style="margin-top: 20px">
-                  1. https://propre.netlify.app/howtouse
-                </h4></a
-              >
-              <a
-                href="https://propre.netlify.app/howitworks"
-                style="color: white"
-                ><h4 style="margin-top: 20px">
-                  2. https://propre.netlify.app/howitworks
-                </h4></a
-              >
-              <a
-                href="https://documenter.getpostman.com/view/15691586/TzRVekwe"
-                style="color: white"
-                ><h4 style="margin-top: 20px">
-                  3. https://documenter.getpostman.com/view/15691586/TzRVekwe
-                </h4></a
-              >
-              <a
-                href="https://propre-api.herokuapp.com/propre-api/"
-                style="color: white"
-                ><h4 style="margin-top: 20px">
-                  4. https://propre-api.herokuapp.com/propre-api/
-                </h4></a
-              >
+              <ul style="color: white">
+                <li>
+                  <a
+                    href="https://propre.netlify.app/howtouse"
+                    style="color: white"
+                    ><h4 style="margin-top: 20px">HOW TO USE PROPRE</h4></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://propre.netlify.app/howitworks"
+                    style="color: white"
+                    ><h4 style="margin-top: 20px">HOW DOES PROPE WORK</h4></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://documenter.getpostman.com/view/15691586/TzRVekwe"
+                    style="color: white"
+                    ><h4 style="margin-top: 20px">API DOCUMENTATION</h4></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://propre-api.herokuapp.com/propre-api/"
+                    style="color: white"
+                    ><h4 style="margin-top: 20px">API URL</h4></a
+                  >
+                </li>
+              </ul>
             </b-col>
           </b-row>
         </b-container>
