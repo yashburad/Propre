@@ -9,7 +9,7 @@
       <div class="overlay1">
         <div class="aboutus"></div>
         <b-container>
-          <h1 style="color: white">HOW DOES IT WORK</h1>
+          <h1 style="color: white">HOW IT WORKS</h1>
           <b-row style="margin: 60px 0px; padding-bottom: 50px">
             <b-col>
               <iframe

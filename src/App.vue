@@ -9,8 +9,11 @@
 </template>
 
 <style>
+.bm-overlay {
+  background: black !important;
+}
 body {
-  background-color: black;
+  background-color: black !important;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
