@@ -37,7 +37,7 @@
             ><b-row class="d-flex">
               <b-col sm="3" class="p-0" style="align-self: center">
                 <h5 style="margin: 0px 10px; text-transform: uppercase">
-                  Transaction Number :
+                  Transaction ID :
                 </h5>
               </b-col>
               <b-col sm="8">
