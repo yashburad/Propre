@@ -12,28 +12,44 @@
           <b-container>
             <b-row class="mt-5 mb-5">
               <b-col>
-                <b-form-input placeholder="FIRST NAME"></b-form-input> </b-col
+                <b-form-input
+                  v-model="first"
+                  placeholder="FIRST NAME"
+                ></b-form-input> </b-col
               ><b-col>
-                <b-form-input placeholder="LAST NAME"></b-form-input>
+                <b-form-input
+                  v-model="last"
+                  placeholder="LAST NAME"
+                ></b-form-input>
               </b-col>
             </b-row>
             <b-row class="mt-5 mb-5">
               <b-col>
-                <b-form-input placeholder="EMAIL ID"></b-form-input> </b-col
+                <b-form-input
+                  v-model="email"
+                  placeholder="EMAIL ID"
+                ></b-form-input> </b-col
               ><b-col>
-                <b-form-input placeholder="PHONE NUMBER"></b-form-input>
+                <b-form-input
+                  v-model="number"
+                  placeholder="PHONE NUMBER"
+                ></b-form-input>
               </b-col>
             </b-row>
             <b-row class="mt-5 mb-5">
               <b-col>
                 <textarea
+                  v-model="feedback"
                   class="form-control"
                   rows="5"
                   placeholder="FEEDBACK"
                 ></textarea>
               </b-col>
             </b-row>
-            <b-button size="lg"> SUBMIT </b-button>
+            <b-button @click="compute()" size="lg"> SUBMIT </b-button>
+            <h4 class="error" style="margin-top: 20px" v-show="this.bool">
+              {{ this.msg }}
+            </h4>
           </b-container>
         </div>
       </div>
@@ -52,13 +68,77 @@ import Slides from "@/components/Slides.vue";
 export default {
   name: "Home",
   data() {
-    return {};
+    return {
+      first: "",
+      last: "",
+      email: "",
+      number: "",
+      feedback: "",
+      bool: false,
+      msg: "PLEASE FILL ALL THE DETAILS",
+    };
   },
   components: {
     Slides,
     Header,
   },
-  methods: {},
+  methods: {
+    compute: function () {
+      if (
+        this.first == "" ||
+        this.last == "" ||
+        this.email == "" ||
+        this.number == "" ||
+        this.feedback == ""
+      ) {
+        this.bool = true;
+        this.msg = "PLEASE FILL ALL THE DETAILS";
+        return;
+      }
+      let dict = new Object();
+      dict["First Name"] = this.first;
+      dict["Last Name"] = this.last;
+      dict["Email ID"] = this.email;
+      dict["Phone"] = this.number;
+      dict["Feedback"] = this.feedback;
+
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: JSON.stringify(dict),
+        redirect: "follow",
+      };
+
+      fetch(
+        "https://propre-api.herokuapp.com/propre-api/feedback",
+        requestOptions
+      )
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result);
+          this.clear(result);
+        })
+
+        .catch((error) => {
+          console.log("error", error);
+        });
+    },
+    clear: function (x) {
+      if (x["Status"] == true) {
+        this.msg = "Submitted";
+      }
+      if (x["Status"] == false) {
+        this.msg = x["Error"];
+      }
+      (this.first = ""), (this.last = "");
+      this.email = "";
+      this.number = "";
+      this.feedback = "";
+    },
+  },
 };
 </script>
 

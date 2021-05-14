@@ -12,11 +12,21 @@
           <h1 style="color: white">HOW IT WORKS</h1>
           <b-row style="margin: 60px 0px; padding-bottom: 50px">
             <b-col>
+              <!-- <iframe
+                src="https://drive.google.com/file/d/1jr0hCHAZpGdYT4lWgfu8sxouE-w-wLvO/preview"
+                width="700px"
+                height="800px"
+              ></iframe> -->
               <iframe
                 src="https://drive.google.com/file/d/1jr0hCHAZpGdYT4lWgfu8sxouE-w-wLvO/preview"
                 width="700px"
                 height="800px"
               ></iframe>
+              <!-- <iframe
+                src="https://docs.google.com/gview?url=/Users/raj.burad7/Documents/Semester 6/Blockchain/Project/propre-final/src/assets/Propre Report.pdf&embedded=true"
+                style="width: 600px; height: 500px"
+                frameborder="0"
+              ></iframe> -->
             </b-col>
           </b-row>
         </b-container>
